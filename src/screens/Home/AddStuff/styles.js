@@ -30,12 +30,17 @@ export default {
         paddingRight: 30
     },
     selectStuffView :{
-        
+        flexDirection:'row'
     },
     stuffImage:{
+        flex:1,
         height:100,
         width:100,
-       
+        margin:5
+    },
+    addPhotoButton:{
+        flex:1,
+        margin:5
     },
     imageStyle:{
         width:'100%',

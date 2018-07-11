@@ -4,14 +4,19 @@ import {
     Text,
     TextInput,
     Image,
-    ScrollView
+    ScrollView,
+    TouchableOpacity
 } from 'react-native';
 
 import Styles from './styles';
-import { Button} from 'react-native-material-ui';
+import { Button } from 'react-native-material-ui';
 import { AppTheme, BackButton } from '@components';
 import ListPopover from 'react-native-list-popover';
 import {Colors,Images,CSS} from '@theme';
+import { Header } from 'react-native-elements';
+import Constants from '../../../constants';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import ImagePicker from "react-native-image-picker";
 
 const strStuffAdded = "Your stuff has been added!\n\n Now you can begin using this bit of stuff to make offers.\n\nIf anyone else likes your stuff, they'll send you some offers too!"
 export default class AddStuff extends Component {
@@ -22,10 +27,11 @@ export default class AddStuff extends Component {
         this.state = ({
             isConditionVisible:false,
             isCategoryVisible:false,
-            newStuff: {
-                'avatar':Images.img_5,
+            // newStuff: {
+            //     'avatar':Images.img_5,
                 
-            },
+            // },
+            avatarSource:Images.img_5,
             conditions: 
                 ["condition 1",
                 "condition 2",
@@ -71,19 +77,59 @@ export default class AddStuff extends Component {
         this.props.navigation.navigate("NotificationDialog",{title:strStuffAdded,next:"HomeStarter"});
     }
 
+    openImagePicker() {
+
+        const options = {
+            quality: 1.0,
+            maxWidth: 500,
+            maxHeight: 500,
+                storageOptions: {
+                skipBackup: true
+            }
+        };
+        let arrImg = []; 
+        ImagePicker.showImagePicker(options, response => {
+        console.log("Response = ", response);
+
+        if (response.didCancel) {
+            console.log("User cancelled photo picker");
+        }
+        else if (response.error) {
+            console.log("ImagePicker Error: ", response.error);
+        }
+        else if (response.customButton) {
+        }
+        else {
+            let source = { uri: response.uri , fileName: response.fileName, type: response.type};
+
+                this.setState({avatarSource: source})
+
+            }
+        });
+    }
+
     render() {
         return (
             <AppTheme >
+                <Header
+                    leftComponent={
+                        <TouchableOpacity onPress = {()=> this.props.navigation.goBack()}>
+                            <Icon name="chevron-left" color={Constants.Colors.DarkGrey} size={25} />
+                        </TouchableOpacity>
+                    }
+                    centerComponent={{ text: 'ADD STUFF', style: { color: Constants.Colors.DarkGrey, fontSize:20 } }}
+                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey }}
+                />
                 <View style = {Styles.container} >
-                    <View style={Styles.headerView}>
-                        <BackButton text="Back" onPress = {()=> this.props.navigation.goBack()}>BACK</BackButton>
-                    </View>
                     <ScrollView style={Styles.scrollContainer}>
                         
                         <View style={Styles.contents}>                
                             <View style={Styles.selectStuffView}>
                                 <View style={Styles.stuffImage}>
-                                    <Image style={Styles.imageStyle} source={this.state.newStuff["avatar"]} />
+                                    <Image style={Styles.imageStyle} source={this.state.avatarSource} />
+                                </View>
+                                <View style={Styles.addPhotoButton}>
+                                    <Button primary raised text = 'ADD PHOTO' onPress={() => this.openImagePicker()} style={{"container":{'backgroundColor':Constants.Colors.White},"text":{'color':Constants.Colors.Black}}}/>
                                 </View>
                             </View>
                             
@@ -105,7 +151,7 @@ export default class AddStuff extends Component {
                                     </View>
                                 </View>
                                 <View style={Styles.view50Right}>
-                                    <Text style={Styles.detailItemlabel}>Min Value Desired</Text>                                   
+                                    <Text style={Styles.detailItemlabel}>Min Offer Value</Text>                                   
                                     <View style={Styles.itemInput}>
                                         <TextInput  ></TextInput>
                                     </View>
@@ -114,13 +160,13 @@ export default class AddStuff extends Component {
 
                             <Text style={Styles.detailItemlabel}>Condition</Text>                                   
                             <View style={Styles.itemButton}>
-                                <Button primary raised text = {this.getSelectedCondition()} onPress={() => this.setState({isConditionVisible: true,isCategoryVisible:false})} style={{"container":{'backgroundColor':Colors.darkGrayColor}}}/>
+                                <Button primary raised text = {this.getSelectedCondition()} onPress={() => this.setState({isConditionVisible: true,isCategoryVisible:false})} style={{"container":{'backgroundColor':Constants.Colors.White},"text":{'color':Constants.Colors.Black}}}/>
                                
                             </View>
 
                             <Text style={Styles.detailItemlabel}>Category</Text>                                   
                             <View style={Styles.itemButton}>
-                                <Button primary raised text = {this.getSelectedCategory()} onPress={() => this.setState({isCategoryVisible: true,isConditionVisible:false})} style={{"container":{'backgroundColor':Colors.darkGrayColor}}}/>
+                                <Button primary raised text = {this.getSelectedCategory()} onPress={() => this.setState({isCategoryVisible: true,isConditionVisible:false})} style={{"container":{'backgroundColor':Constants.Colors.White},"text":{'color':Constants.Colors.Black}}}/>
                             </View>
 
                         </View>
