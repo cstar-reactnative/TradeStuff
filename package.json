@@ -15,11 +15,13 @@
   "dependencies": {
     "react": "16.3.1",
     "react-native": "0.55.4",
+    "react-native-elements": "^0.19.1",
     "react-native-event-listeners": "^1.0.3",
     "react-native-grid-list": "^1.0.8",
     "react-native-list-popover": "^1.1.1",
     "react-native-material-design-styles": "^0.2.7",
     "react-native-material-ui": "^1.22.3",
+    "react-native-navbar": "^2.1.0",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^2.0.1"
   },
