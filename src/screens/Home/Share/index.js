@@ -7,11 +7,13 @@ import {
 } from 'react-native';
 
 import Styles from './styles';
-import { Button ,Icon} from 'react-native-material-ui';
 import { AppTheme,BackButton } from '@components';
-import {Colors,Images} from '@theme';
+import {Images} from '@theme';
+import { Header } from 'react-native-elements';
+import Constants from '../../../constants';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-const strShareTradestuff= "SHARE TRADESTUFF WITH YOUR FRIENDS!"
+const strShareTradestuff= "Share TradeStuff with your friends!"
 export default class Share extends Component {
 
     constructor(props) {
@@ -43,10 +45,16 @@ export default class Share extends Component {
     render() {
         return (
             <AppTheme >
+                <Header
+                    leftComponent={
+                        <TouchableOpacity onPress = {()=> this.props.navigation.goBack()}>
+                            <Icon name="chevron-left" color={Constants.Colors.DarkGrey} size={25} />
+                        </TouchableOpacity>
+                    }
+                    centerComponent={{ text: 'INVITE A FRIEND', style: { color: Constants.Colors.DarkGrey, fontSize:20 } }}
+                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey }}
+                />
                 <View style = {Styles.container} >
-                    <View style={Styles.headerView}>
-                        <BackButton text="Back" onPress = {()=> this.props.navigation.goBack()}>BACK</BackButton>
-                    </View>
                     <View style={Styles.container}>  
                         <View style={Styles.headerTitle} >
                             <Text style={Styles.headerText}>{strShareTradestuff}</Text>

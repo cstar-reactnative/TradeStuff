@@ -7,7 +7,7 @@ import {
     StatusBar
 } from 'react-native';
 
-import {Colors,Images} from '@theme';
+import {Images} from '@theme';
 import {TopBar,AppTheme,ScrollItem,ScrollArrow,AppContainer} from '@components';
 import Styles from './styles';
 import { Icon, ListItem,Button} from 'react-native-material-ui';

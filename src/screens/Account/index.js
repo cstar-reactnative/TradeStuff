@@ -7,7 +7,7 @@ import {
     ScrollView
 } from 'react-native';
 
-import {Colors,Images} from '@theme';
+import {Images} from '@theme';
 import {AppTheme} from '@components';
 import Styles from './styles';
 import { Button,Avatar } from 'react-native-material-ui';

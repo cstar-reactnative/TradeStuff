@@ -7,7 +7,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-import {Colors,Images} from '@theme';
+import {Images} from '@theme';
 import {BottomBar,TopBar,AppTheme} from '@components';
 import Styles from './styles';
 import { Button ,Icon,Dialog,DialogDefaultActions} from 'react-native-material-ui';

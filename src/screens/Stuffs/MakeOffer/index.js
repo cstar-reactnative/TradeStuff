@@ -12,7 +12,7 @@ import Styles from './styles';
 import { Button} from 'react-native-material-ui';
 import { AppTheme ,BackButton} from '@components';
 
-import {Colors,Images,CSS} from '@theme';
+import {Images,CSS} from '@theme';
 
 const strOfferSent = "Your offer has been sent! \n\nThe recipient will be notified and if they accept your offer, we will let you know!"
 export default class MakeOffer extends Component {

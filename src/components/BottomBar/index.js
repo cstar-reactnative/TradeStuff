@@ -9,7 +9,7 @@ import {
 
 import { EventRegister } from 'react-native-event-listeners'
 
-import {Colors} from '@theme';
+//import {Colors} from '@theme';
 import {AppTheme} from '@components';
 import { COLOR,ThemeProvider, BottomNavigation,Toolbar ,Icon, Searchable} from 'react-native-material-ui';
 

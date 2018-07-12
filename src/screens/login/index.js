@@ -6,7 +6,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-import {Colors} from '@theme';
+//import {Colors} from '@theme';
 import Styles from './styles';
 import {TopBar,AppTheme,ScrollItem,ScrollArrow} from '@components';
 import { Button} from 'react-native-material-ui';

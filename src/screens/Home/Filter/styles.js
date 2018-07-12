@@ -1,4 +1,4 @@
-
+import Constants from '../../../constants';
 import {Colors} from '@theme';
 
 export default {
@@ -20,7 +20,7 @@ export default {
     bigLabel: {
         marginTop: 23,
         marginBottom:7,
-        color : Colors.greenColor,
+        color : Constants.Colors.DarkGrey,
         fontSize: 25
     },
     itemView: {

@@ -7,11 +7,13 @@ import {
     Image
 } from 'react-native';
 
-import {Colors,Images,CSS} from '@theme';
+import {Images,CSS} from '@theme';
 import Styles from './styles';
 import {AppTheme,BackButton} from '@components';
 import {Button, Icon} from 'react-native-material-ui';
-
+import { Header } from 'react-native-elements';
+import Constants from '../../../constants';
+import IconBack from 'react-native-vector-icons/FontAwesome';
 export default class ViewPiece extends Component {
 
     constructor(props) {
@@ -62,10 +64,16 @@ export default class ViewPiece extends Component {
     render() {
         return (
             <AppTheme >
+                <Header
+                    leftComponent={
+                        <TouchableOpacity onPress = {()=> this.props.navigation.goBack()}>
+                            <IconBack name="chevron-left" color={Constants.Colors.DarkGrey} size={25} />
+                        </TouchableOpacity>
+                    }
+                    centerComponent={{ text: 'STUFF DETAILS', style: { color: Constants.Colors.DarkGrey, fontSize:20 } }}
+                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey }}
+                />
                 <View style={Styles.container}>
-                    <View style={Styles.headerView} >
-                        <BackButton text="Back" onPress = {()=> this.props.navigation.goBack()}>BACK</BackButton>
-                    </View>
                     <ScrollView style={Styles.scrollView}>
 
                         <View style={Styles.carouselView}>
@@ -76,12 +84,8 @@ export default class ViewPiece extends Component {
                                 </TouchableOpacity>
 
                                 <View style={Styles.favoriteBtn}>
-                                <TouchableOpacity  onPress={this.pressFavorite.bind(this)}>
-                                    <Icon style={Styles.shareBtn} name = "favorite" size={30}/>
-                                </TouchableOpacity>
+                                    <Text style={Styles.carouselPrice}>$25</Text>
                                 </View>
-                                
-                                <Text style={Styles.carouselPrice}>$25</Text>
                             </View>
                         </View>
 
@@ -107,24 +111,24 @@ export default class ViewPiece extends Component {
 
                     <View style={Styles.makeofferView}>
                             <View style={Styles.descTitle}>
-                                <Text style={[CSS.white,CSS.font20]}>{this.state.detail.subTitle}</Text>
+                                <Text style={{color:Constants.Colors.Green}}>{this.state.detail.subTitle}</Text>
                             </View>
 
                             <View style={Styles.descTitle}>
-                                <Text style={[CSS.white,CSS.font15]}>Interests</Text>
+                                <Text style={{color:Constants.Colors.DarkGrey}}>Interests</Text>
                             </View>
 
                             <View style={[CSS.flexRow,CSS.justifyCenter]}>
                                 <TouchableOpacity>
-                                    <Icon style={CSS.white} name='language' size={35}/>
+                                    <Icon color={Constants.Colors.DarkGrey} name='language' size={35}/>
                                 </TouchableOpacity>
 
                                 <TouchableOpacity>
-                                    <Icon style={CSS.white} name='launch' size={35}/>
+                                    <Icon color={Constants.Colors.DarkGrey} name='launch' size={35}/>
                                 </TouchableOpacity>
 
                                 <TouchableOpacity>
-                                    <Icon style={CSS.white} name='face' size={35}/>
+                                    <Icon color={Constants.Colors.DarkGrey} name='face' size={35}/>
                                 </TouchableOpacity>
                             </View>
 

@@ -1,3 +1,4 @@
+import Constants from '../../../constants';
 import {Colors} from '@theme';
 export default {
 
@@ -22,11 +23,11 @@ export default {
         height:200,
         borderWidth:3,
         borderRadius:5,
-        borderColor:Colors.orangeColor
+        borderColor:Constants.Colors.Green
     },
     shareBtn:{
         padding:5,  
-        backgroundColor:Colors.orangeColor,
+        backgroundColor:Constants.Colors.Green,
         color: Colors.whiteColor
     },
     imageStyle: {
@@ -58,7 +59,7 @@ export default {
         fontSize: 25,
         height:'100%',
         color:Colors.whiteColor,
-        backgroundColor:Colors.orangeColor,
+        backgroundColor:Constants.Colors.Green,
         height:35,
     },
     descriptionView: {
@@ -77,7 +78,7 @@ export default {
     },
     subtitleFont: {
         fontSize:14,
-        color: Colors.orangeColor,
+        color: Constants.Colors.Green,
         textAlign:'center'
     },
     descDesc: {
@@ -93,13 +94,13 @@ export default {
     },
     favoriteBtn:{
         flex:1,
-        alignItems:'center'
+        alignItems:'flex-end'
     },
     makeofferView: {
         width:'100%',
         height:150,
         marginTop:3,
-        backgroundColor:Colors.darkGrayColor,
+        backgroundColor:Constants.Colors.MediumGrey,
         alignItems:'center'
     },
     offerBtn: {

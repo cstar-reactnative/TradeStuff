@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {  Text, Dimensions, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { createBottomTabNavigator , createStackNavigator} from 'react-navigation';
 
-import {Colors} from '@theme';
+//import {Colors} from '@theme';
 
 import BottomBar from './components/BottomBar'
 

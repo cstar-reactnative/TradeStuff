@@ -6,7 +6,7 @@ import {
     Switch
 } from 'react-native';
 
-import {Colors} from '@theme';
+//import {Colors} from '@theme';
 import {AppTheme,Utils,BackButton} from '@components';
 import Styles from './styles';
 import { Button } from 'react-native-material-ui';

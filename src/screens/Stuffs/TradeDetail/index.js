@@ -6,7 +6,7 @@ import {
     Alert
 } from 'react-native';
 
-import {Colors,Images,CSS} from '@theme';
+import {Images,CSS} from '@theme';
 import {AppTheme,BackButton} from '@components';
 import Styles from './styles';
 import { Button ,Icon} from 'react-native-material-ui';
