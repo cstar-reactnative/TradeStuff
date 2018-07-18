@@ -30,6 +30,7 @@ import ItemsToOffer from './screens/Stuffs/ItemsToOffer'
 import MakeOffer from './screens/Stuffs/MakeOffer'
 import TradeDetail from './screens/Stuffs/TradeDetail'
 import TradeComplete from './screens/Stuffs/TradeComplete'
+import EditStuff from './screens/Stuffs/EditStuff'
 
 export const HomeStack = createStackNavigator({
     HomeStarter: {screen:Home},
@@ -40,7 +41,8 @@ export const HomeStack = createStackNavigator({
     Share: {screen:Share},
     PersonalStuff: {screen:PersonalStuff},
     ItemsToOffer: {screen:ItemsToOffer},
-    MakeOffer: {screen:MakeOffer}
+    MakeOffer: {screen:MakeOffer},
+    EditStuff: {screen:EditStuff},
 },{
     headerMode:'none'
 });

@@ -13,7 +13,7 @@ import {AppTheme,BackButton} from '@components';
 import {Button, Icon} from 'react-native-material-ui';
 import { Header } from 'react-native-elements';
 import Constants from '../../../constants';
-import IconBack from 'react-native-vector-icons/FontAwesome';
+import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 export default class ViewPiece extends Component {
 
     constructor(props) {
@@ -67,7 +67,7 @@ export default class ViewPiece extends Component {
                 <Header
                     leftComponent={
                         <TouchableOpacity onPress = {()=> this.props.navigation.goBack()}>
-                            <IconBack name="chevron-left" color={Constants.Colors.DarkGrey} size={25} />
+                            <IconFontAwesome name="chevron-left" color={Constants.Colors.DarkGrey} size={25} />
                         </TouchableOpacity>
                     }
                     centerComponent={{ text: 'STUFF DETAILS', style: { color: Constants.Colors.DarkGrey, fontSize:20 } }}
@@ -79,7 +79,7 @@ export default class ViewPiece extends Component {
                         <View style={Styles.carouselView}>
                             <Image style={Styles.imageStyle} source = {this.state.listItems[this.state.selectedIndex].thumbnail} />
                             <View style={Styles.carouselItem}>
-                                <TouchableOpacity  onPress={this.pressShare.bind(this)}>
+                                <TouchableOpacity onPress={this.pressShare.bind(this)}>
                                     <Icon style={Styles.shareBtn} name = "share" size={30}/>
                                 </TouchableOpacity>
 
@@ -92,7 +92,12 @@ export default class ViewPiece extends Component {
 
                         <View style={Styles.descriptionView}>
                             <View style={Styles.descTitle}>
-                                <Text style={Styles.titleFont}>{this.state.detail.title}</Text>
+                                <View style={{flexDirection:'row'}}>
+                                    <Text style={Styles.titleFont}>{this.state.detail.title}</Text>
+                                    <TouchableOpacity onPress={()=>this.props.navigation.navigate('EditStuff')} style={{flex:1,alignItems:'flex-end'}}>
+                                        <IconFontAwesome name='edit' color={Constants.Colors.Green} size={32} />
+                                    </TouchableOpacity>
+                                </View>
                             </View>
                             <View  style={Styles.carouselTitleView}>
                                     <Text style={Styles.carouselTitle}>( Used )</Text>

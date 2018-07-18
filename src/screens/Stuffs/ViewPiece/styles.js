@@ -74,7 +74,10 @@ export default {
         alignItems:'center'
     },
     titleFont:{
-        fontSize: 20
+        fontSize: 20,
+        flex:8,
+        marginLeft:Constants.BaseStyle.DEVICE_WIDTH/100 * 8,
+        textAlign:'center'
     },
     subtitleFont: {
         fontSize:14,
