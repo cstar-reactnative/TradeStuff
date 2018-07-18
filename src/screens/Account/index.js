@@ -4,12 +4,16 @@ import {
     Text,
     TextInput,
     Image,
-    ScrollView
+    ScrollView,
+    TouchableOpacity
 } from 'react-native';
 
 import {Images} from '@theme';
 import {AppTheme} from '@components';
 import Styles from './styles';
+import { Header } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Constants from '../../constants';
 import { Button,Avatar } from 'react-native-material-ui';
 import { EventRegister } from 'react-native-event-listeners'
 
@@ -37,6 +41,15 @@ export default class Account extends Component {
     render() {
         return (
             <AppTheme >
+                <Header
+                    leftComponent={
+                        <TouchableOpacity onPress = {()=> this.props.navigation.goBack()}>
+                            <Icon name="chevron-left" color={Constants.Colors.DarkGrey} size={25} />
+                        </TouchableOpacity>
+                    }
+                    centerComponent={{ text: 'EDIT PROFILE', style: { color: Constants.Colors.DarkGrey, fontSize:20 } }}
+                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey }}
+                />
                 <View style={Styles.container}>
                     <View style={Styles.accountView}>
                         <View style={Styles.menuView}> 
@@ -54,19 +67,21 @@ export default class Account extends Component {
                                 <Button raised text = "SET WANTS" onPress={()=>this.props.navigation.navigate("Wants")} />
                             </View>
                             <View style={Styles.menuButton}>
-                                <Button raised text = "SEE LIKES" onPress={()=>this.props.navigation.navigate("Likes")}/>
+                                <Button raised text = "SAVE" 
+                                // onPress={()=>this.props.navigation.navigate("Likes")}
+                                onPress={()=>alert("Saved")}/>
                             </View>
 
                             <View style={Styles.dividerLine}/>                                                        
 
-                            <View style={Styles.menuButton}>
+                            {/* <View style={Styles.menuButton}>
                                 <Button raised text = "DEPOSIT" onPress={this.navigateHome.bind(this)}/>
                             </View>
                             <View style={Styles.menuButton}>
                                 <Button raised primary text = "WITHDRAW" />
-                            </View>
+                            </View> */}
 
-                            <View style={Styles.menuLabel}>
+                            {/* <View style={Styles.menuLabel}>
                                 <Text style={Styles.menuLabelText}>UNLOCKED STAKE</Text>
                             </View>
                             <View style={Styles.menuLabel}>
@@ -77,7 +92,7 @@ export default class Account extends Component {
                             </View>
                             <View style={Styles.menuLabel}>
                                 <Text style={Styles.menuLabelValue}>$999.00</Text>
-                            </View>
+                            </View> */}
                         </View>
                         
                         <View style={Styles.detailView}>
@@ -94,7 +109,7 @@ export default class Account extends Component {
                                         <TextInput ></TextInput>
                                     </View>
 
-                                    <Text style={Styles.detailItemlabel}>Address</Text>                                   
+                                    <Text style={Styles.detailItemlabel}>Shipping Address</Text>                                   
                                     <View style={Styles.itemInput}>
                                         <TextInput ></TextInput>
                                     </View>

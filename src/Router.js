@@ -20,6 +20,7 @@ import Incoming from './screens/Incoming'
 import Trades from './screens/Trades'
 
 import Account from './screens/Account'
+import AccountDetails from './screens/Account/AccountDetails'
 import Wants from './screens/Account/Wants'
 import Likes from './screens/Account/Likes'
 
@@ -36,6 +37,8 @@ export const HomeStack = createStackNavigator({
     HomeStarter: {screen:Home},
     Filter :{screen:Filter},
     AddStuff : {screen:AddStuff},
+    Account : { screen:Account},
+    AccountDetails : { screen:AccountDetails},
     NotificationDialog: {screen:NotificationDialog},
     ViewPiece: {screen:ViewPiece},
     Share: {screen:Share},
@@ -73,7 +76,8 @@ export const TradesStack = createStackNavigator({
 });
 
 export const AccountStack = createStackNavigator({
-    AccountStarter: {screen:Account},
+    AccountStarter: {screen:AccountDetails},
+    AccountDetails: {screen:Account},
     Wants : {screen:Wants},
     Likes : {screen:Likes},
     NotificationDialog: {screen:NotificationDialog},
