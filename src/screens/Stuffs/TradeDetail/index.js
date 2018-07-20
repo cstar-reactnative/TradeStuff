@@ -3,8 +3,12 @@ import {
     View,
     Text,
     Image,
-    Alert
+    Alert,
+    TouchableOpacity,
 } from 'react-native';
+import { Header } from 'react-native-elements';
+import Constants from '../../../constants';
+import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import {Images,CSS} from '@theme';
 import {AppTheme,BackButton} from '@components';
@@ -46,10 +50,15 @@ export default class TradeDetail extends Component {
         return (
             <AppTheme >
                 <View style={Styles.container}>
-                    <View style={Styles.headerView}>
-                        <BackButton text="Back" onPress = {()=> this.props.navigation.goBack()}>BACK</BackButton>
-                    </View>
-
+                <Header
+                    leftComponent={
+                        <TouchableOpacity onPress = {()=> this.props.navigation.goBack()}>
+                            <IconFontAwesome name="chevron-left" color={Constants.Colors.DarkGrey} size={25} />
+                        </TouchableOpacity>
+                    }
+                    centerComponent={{ text: 'TRADE DETAILS', style: { color: Constants.Colors.DarkGrey, fontSize:20 } }}
+                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey, margin: 20, marginTop: 10, elevation: 5 }}
+                />
                     <View style={Styles.container}>
                         <View style={Styles.titleView}>
                             <Text style={[CSS.font20,CSS.darkGray]} >Finalized Trade</Text>
@@ -63,7 +72,8 @@ export default class TradeDetail extends Component {
                                 <View style={{width:10,height:'100%'}} />
                             </View>
                             <View>
-                            <Icon style={Styles.imageColor} name="import-export" size={34} />
+                            <Icon style={Styles.imageColor2} name="arrow-forward" size={34} />
+                            <Icon style={Styles.imageColor1} name="arrow-back" size={34} />
                             </View>
                             <View style={Styles.contentItemImage}>
                                 <View style={{width:10,height:'100%'}} />
@@ -77,20 +87,24 @@ export default class TradeDetail extends Component {
                             <Text style={[CSS.font18,CSS.darkGray]} >Please send your stuff to:</Text>
                         </View>
 
-                        <View style={Styles.detailView}>
-                            <Text style={[CSS.font25,CSS.white,CSS.textCenter]} >1234 Example Ln., Rancho Cucamonga, CA, 91737</Text>
+                        <View style={Styles.subTitleView}>
+                        <Text style={[CSS.font18,CSS.darkGray]} >John Doe</Text>
+                        <Text style={[CSS.font18,CSS.darkGray]} >1234 Main St.</Text>
+                        <Text style={[CSS.font18,CSS.darkGray]} >City, CA 91713</Text>
                         </View>
-
-                        <View style={Styles.buttons}>
-                            <View style={Styles.oneRow}>
-                                <Button style={Styles.button} primary raised text="Chat"/>                            
-                            </View>
-                            <View style={Styles.oneRow}>
-                                <Button style={Styles.button} primary raised text="MARK SENT" onPress={this.pressSent.bind(this)}/>                            
-                            </View>
-                            <View style={Styles.oneRow}>
-                                <Button style={Styles.button} primary raised text="MARK RECEIVED" onPress={this.pressReceived.bind(this)}/>                            
-                            </View>
+                        
+                        <View style = {Styles.detailView}>
+                        <Text style={[CSS.font18,CSS.darkGray]} >Trade Details</Text>
+                        <Text style={[CSS.font18,CSS.darkGray]} >Offer Sent: June 25, 2018 6:25PM</Text>
+                        <Text style={[CSS.font18,CSS.darkGray]} >Offer Accepted: June 26, 2018 5:15PM</Text>
+                        <View style={{flexDirection:'row'}}>
+                        <TouchableOpacity onPress={this.pressSent.bind(this)}>
+                            <Text style={Styles.sentMark}>MARK 'SENT' </Text>                            
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={this.pressReceived.bind(this)}>
+                            <Text style = {Styles.receivedMark}>MARK 'RECEIVED' </Text>                          
+                        </TouchableOpacity>  
+                        </View>
                         </View>
 
                     </View>

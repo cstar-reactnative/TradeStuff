@@ -22,11 +22,26 @@ export default {
     subTitleView:{
         alignItems:'center'
     },
+    sentMark:{
+        backgroundColor: Colors.whiteColor,
+        color: Colors.greenColor,
+        padding: 15, 
+        margin:10,
+        marginTop:20
+    },
+    receivedMark:{
+        backgroundColor: Colors.whiteColor,
+        color: Colors.orangeColor,
+        padding: 15,
+        margin:10,
+        marginTop:20
+    },
     detailView:{
         margin:10,
         alignItems:'center',
-        backgroundColor:Colors.darkGrayColor,
-        padding:10
+        backgroundColor:Colors.lightGrayColor,
+        padding:10,
+        flex:1
     },
     contentItemView:{
         width: '100%',
@@ -61,7 +76,12 @@ export default {
         borderRadius:5,
         borderColor:Colors.orangeColor
     },
-
+    imageColor1:{
+        color: Colors.orangeColor
+    },
+    imageColor2:{
+        color: Colors.greenColor
+    },
     buttons: {
         flex:1,
         paddingTop:5,
