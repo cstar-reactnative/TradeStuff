@@ -33,7 +33,8 @@ export default class ViewPiece extends Component {
             detail: {
                 title:"STUFF",
                 minOffer: "Min Offer Value: $22",
-                subTitle: "John Doe - CA, United States",
+                subTitle: "John Doe ",
+                subTitle2:"- CA, United States",
                 desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
             }
         });
@@ -50,6 +51,10 @@ export default class ViewPiece extends Component {
 
     pressFavorite(index){
 
+    }
+
+    pressUsername(){
+        this.props.navigation.navigate("AccountDetails",{index:this.state.selectedIndex})
     }
 
     pressSubTitle(index){
@@ -71,7 +76,7 @@ export default class ViewPiece extends Component {
                         </TouchableOpacity>
                     }
                     centerComponent={{ text: 'STUFF DETAILS', style: { color: Constants.Colors.DarkGrey, fontSize:20 } }}
-                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey }}
+                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey, margin: 20, marginTop: 10, elevation: 5 }}
                 />
                 <View style={Styles.container}>
                     <ScrollView style={Styles.scrollView}>
@@ -79,10 +84,14 @@ export default class ViewPiece extends Component {
                         <View style={Styles.carouselView}>
                             <Image style={Styles.imageStyle} source = {this.state.listItems[this.state.selectedIndex].thumbnail} />
                             <View style={Styles.carouselItem}>
-                                <TouchableOpacity onPress={this.pressShare.bind(this)}>
+                                <TouchableOpacity>
                                     <Icon style={Styles.shareBtn} name = "share" size={30}/>
                                 </TouchableOpacity>
-
+                                <View style={Styles.favoriteBtn}>
+                                    <TouchableOpacity onPress={this.pressShare.bind(this)}>
+                                        <Icon style={Styles.shareBtn} name = "favorite" size={30}/>
+                                    </TouchableOpacity>
+                                </View>                                
                                 <View style={Styles.favoriteBtn}>
                                     <Text style={Styles.carouselPrice}>$25</Text>
                                 </View>
@@ -116,7 +125,9 @@ export default class ViewPiece extends Component {
 
                     <View style={Styles.makeofferView}>
                             <View style={Styles.descTitle}>
-                                <Text style={{color:Constants.Colors.Green}}>{this.state.detail.subTitle}</Text>
+                                <Text style={{color:Constants.Colors.Orange}} onPress={this.pressUsername.bind(this)}>{this.state.detail.subTitle} 
+                                <Text style={{color:Constants.Colors.Green}}>{this.state.detail.subTitle2} </Text>
+                                </Text>
                             </View>
 
                             <View style={Styles.descTitle}>

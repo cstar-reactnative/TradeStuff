@@ -4,6 +4,7 @@ export default {
 
     container: {
         flex: 1, 
+        
     },
 
     contentList: {
@@ -13,7 +14,16 @@ export default {
     },
     headerView:{
         height:100,
-        backgroundColor:Colors.darkGrayColor
+        backgroundColor:Colors.lightGrayColor,
+        borderColor: Colors.orangeColor,
+        borderWidth: 3,
+        flexDirection:'row'
+    },
+    sectionTitle: {
+        color: Colors.lightGrayColor,
+        fontSize: 12,
+        textAlign: center,
+        display: block,
     },
     titleView:{
         height:30,
@@ -21,17 +31,30 @@ export default {
         paddingLeft:30,
         paddingRight:30,
         paddingTop:10,
-        flexDirection:"row",
+        flexDirection:"column",
         justifyContent: 'space-between',
+    },
+    favoriteBtn:{
+        
+        alignItems:'flex-end',
+    },
+    carouselPrice: {
+        paddingLeft:5,
+        paddingRight:5,
+        fontSize: 25,
+        height:'100%',
+        color:Colors.whiteColor,
+        backgroundColor:'#f79a0e',
+        height:35,
     },
     itemsView:{
         flex:1,
         width:'100%',
         paddingLeft:30,
-        paddingRight:30,
-        paddingTop:5,
+        paddingTop:15,
         flexDirection:"row",
         justifyContent: 'space-between',
+        alignItems: 'flex-start'
     },
     mainItem:{
         width:60,

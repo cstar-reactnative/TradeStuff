@@ -36,6 +36,12 @@ export default {
     darkGray:{
         color:Colors.darkGrayColor
     },
+    lightGrayColor:{
+        color: Colors.lightGrayColor
+    },
+    orange:{
+        color: Colors.orangeColor
+    },
     backWhite:{
         backgroundColor:'#fff'
     },

@@ -66,20 +66,22 @@ export default class ItemsToOffer extends Component {
             <AppTheme >
                 <View style={Styles.container}>
                     <View style={Styles.headerView} >
+                    <View style={Styles.itemsView}>
+                        <View style={Styles.mainItem}>
+                            <Image style={CSS.fullContent} source={this.state.mainItem.thumbnail}/>
+                        </View>
                         <View style={Styles.titleView}>
-                            <Text style={[CSS.white,CSS.font15]}>Lorem IPSUM</Text>
-                            <Text style={[CSS.white,CSS.font15]}>Intersts</Text>
+                            <Text style={[CSS.darkGray,CSS.font15]}>Item Title</Text>
+                            <Text style={[CSS.darkGray,CSS.font15]}>(used)</Text>
+                            <Text style={[CSS.orange,CSS.font15]}>Minimum offer value               $25</Text>
                         </View>
-                        <View style={Styles.itemsView}>
-                            <View style={Styles.mainItem}>
-                                <Image style={CSS.fullContent} source={this.state.mainItem.thumbnail}/>
-                            </View>
-                            <View style={CSS.flexRow}>
-                                <Icon style={CSS.white} name='language' />
-                                <Icon style={CSS.white} name='launch' />
-                                <Icon style={CSS.white} name='face' />
-                            </View>
-                        </View>
+                    </View>
+                    <View style={Styles.favoriteBtn}>
+                        <Text style={Styles.carouselPrice}>$25</Text>
+                    </View>
+                    </View>
+                    <View>
+                    <Text style={Styles.sectionTitle}>Select stuff to offer</Text>
                     </View>
                     <View style={Styles.contentList}>
                         <GridList

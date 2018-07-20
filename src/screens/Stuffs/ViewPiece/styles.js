@@ -23,11 +23,11 @@ export default {
         height:200,
         borderWidth:3,
         borderRadius:5,
-        borderColor:Constants.Colors.Green
+        borderColor: '#f79a0e'
     },
     shareBtn:{
         padding:5,  
-        backgroundColor:Constants.Colors.Green,
+        backgroundColor:Colors.orangeColor,
         color: Colors.whiteColor
     },
     imageStyle: {
@@ -59,7 +59,7 @@ export default {
         fontSize: 25,
         height:'100%',
         color:Colors.whiteColor,
-        backgroundColor:Constants.Colors.Green,
+        backgroundColor:'#f79a0e',
         height:35,
     },
     descriptionView: {
@@ -98,6 +98,10 @@ export default {
     favoriteBtn:{
         flex:1,
         alignItems:'flex-end'
+    },
+    likeBtn:{
+        flex:1,
+        alignItems:'flex-center'
     },
     makeofferView: {
         width:'100%',
