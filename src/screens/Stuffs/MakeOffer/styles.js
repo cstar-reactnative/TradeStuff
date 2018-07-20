@@ -7,7 +7,8 @@ export default {
         flex: 1, 
     },
     headerView: {
-        height: 50
+        height: 50,
+        margin:10
     },
 
     contents : {

@@ -5,9 +5,11 @@ import {
     Alert,
     Image,
     ScrollView,
-
+    TouchableOpacity,
 } from 'react-native';
-
+import { Header } from 'react-native-elements';
+import Constants from '../../../constants';
+import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 import Styles from './styles';
 import { Button, Icon} from 'react-native-material-ui';
 import { AppTheme ,BackButton} from '@components';
@@ -54,9 +56,15 @@ export default class MakeOffer extends Component {
         return (
             <AppTheme >
                 <View style = {Styles.container} >
-                    <View style={Styles.headerView}>
-                        <BackButton text="Back" onPress = {()=> this.props.navigation.goBack()}>CONFIRM OFFER</BackButton>
-                    </View>
+                <Header
+                    leftComponent={
+                        <TouchableOpacity onPress = {()=> this.props.navigation.goBack()}>
+                            <IconFontAwesome name="chevron-left" color={Constants.Colors.DarkGrey} size={25} />
+                        </TouchableOpacity>
+                    }
+                    centerComponent={{ text: 'CONFIRM OFFER', style: { color: Constants.Colors.DarkGrey, fontSize:20 } }}
+                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey, margin: 20, marginTop: 10, elevation: 5 }}
+                />
                     <ScrollView style={Styles.detailScroll}>
                         <View style={Styles.oneItem}>
                             <Image style={Styles.itemImage} source = {this.state.itemOne.image} />
