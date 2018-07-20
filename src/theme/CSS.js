@@ -44,7 +44,7 @@ export default {
     },
     green:{
         color: Colors.greenColor
-    }
+    },
     backWhite:{
         backgroundColor:'#fff'
     },
