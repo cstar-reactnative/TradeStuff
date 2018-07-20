@@ -57,7 +57,8 @@ export default {
         height:30,
         justifyContent:'center',
         padding: 5,
-        borderColor:Colors.darkGrayColor
+        borderColor:Colors.darkGrayColor,
+        backgroundColor: Colors.whiteColor
     },
     itemInputArea: {
         borderWidth:0.5,
@@ -66,7 +67,8 @@ export default {
         justifyContent:'flex-start',
         paddingTop: 3,
         paddingLeft: 5,
-        borderColor:Colors.darkGrayColor
+        borderColor:Colors.darkGrayColor,
+        backgroundColor: Colors.whiteColor
     },
     view50Left: {
         flex:1,
