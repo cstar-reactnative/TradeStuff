@@ -81,7 +81,7 @@ export default class ItemsToOffer extends Component {
                     </View>
                     </View>
                     <View>
-                    <Text style={Styles.sectionTitle}>Select stuff to offer</Text>
+                        <Text style={Styles.sectionTitle}>Select stuff to offer</Text>
                     </View>
                     <View style={Styles.contentList}>
                         <GridList

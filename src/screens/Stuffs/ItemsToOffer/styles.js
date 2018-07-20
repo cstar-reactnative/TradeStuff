@@ -20,10 +20,8 @@ export default {
         flexDirection:'row'
     },
     sectionTitle: {
-        color: Colors.lightGrayColor,
-        fontSize: 12,
-        textAlign: center,
-        display: block,
+        color: Colors.darkGray,
+        fontSize: 18
     },
     titleView:{
         height:30,
@@ -35,7 +33,6 @@ export default {
         justifyContent: 'space-between',
     },
     favoriteBtn:{
-        
         alignItems:'flex-end',
     },
     carouselPrice: {
