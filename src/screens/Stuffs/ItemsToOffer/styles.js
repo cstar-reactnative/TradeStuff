@@ -56,7 +56,7 @@ export default {
     itemsView:{
         flex:1,
         width:'100%',
-        paddingLeft:30,
+        paddingLeft:10,
         paddingTop:15,
         flexDirection:"row",
         justifyContent: 'space-between',

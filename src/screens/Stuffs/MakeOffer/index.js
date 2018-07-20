@@ -63,7 +63,7 @@ export default class MakeOffer extends Component {
                         </TouchableOpacity>
                     }
                     centerComponent={{ text: 'CONFIRM OFFER', style: { color: Constants.Colors.DarkGrey, fontSize:20 } }}
-                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey, margin: 20, marginTop: 10, elevation: 5 }}
+                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey, elevation: 5 }}
                 />
                     <ScrollView style={Styles.detailScroll}>
                         <View style={Styles.oneItem}>
@@ -76,7 +76,7 @@ export default class MakeOffer extends Component {
                             </View>
                         </View>
                         <View style={Styles.iconView}>
-                            <Icon style={Styles.shareBtn} name = "arrow-upward" size={30}/>
+                            <IconFontAwesome style={Styles.shareBtn} name = "arrow-up" size={30}/>
                         </View>
                         <View style={Styles.twoItem}>
                         <View style={Styles.itemsView}>
@@ -86,7 +86,7 @@ export default class MakeOffer extends Component {
                             <View style={Styles.titleView}>
                                 <Text style={[CSS.darkGray,CSS.font15]}>Item Title</Text>
                                 <Text style={[CSS.darkGray,CSS.font15]}>(used)</Text>
-                                <Text style={[CSS.green,CSS.font15]}>Minimum offer value                 $25</Text>
+                                <Text style={[CSS.green,CSS.font15]}>Minimum offer value          $25</Text>
                             </View>
                             </View>
                             <View style={Styles.itemTitle}>                             

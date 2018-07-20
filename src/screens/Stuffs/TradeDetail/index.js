@@ -57,7 +57,7 @@ export default class TradeDetail extends Component {
                         </TouchableOpacity>
                     }
                     centerComponent={{ text: 'TRADE DETAILS', style: { color: Constants.Colors.DarkGrey, fontSize:20 } }}
-                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey, margin: 20, marginTop: 10, elevation: 5 }}
+                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey, elevation: 5 }}
                 />
                     <View style={Styles.container}>
                         <View style={Styles.titleView}>

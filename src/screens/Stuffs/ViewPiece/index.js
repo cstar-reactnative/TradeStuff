@@ -76,7 +76,7 @@ export default class ViewPiece extends Component {
                         </TouchableOpacity>
                     }
                     centerComponent={{ text: 'STUFF DETAILS', style: { color: Constants.Colors.DarkGrey, fontSize:20 } }}
-                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey, margin: 20, marginTop: 10, elevation: 5 }}
+                    outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey, elevation: 5 }}
                 />
                 <View style={Styles.container}>
                     <ScrollView style={Styles.scrollView}>

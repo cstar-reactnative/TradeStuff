@@ -74,7 +74,7 @@ export default class ItemsToOffer extends Component {
                         <View style={Styles.titleView}>
                             <Text style={[CSS.darkGray,CSS.font15]}>Item Title</Text>
                             <Text style={[CSS.darkGray,CSS.font15]}>(used)</Text>
-                            <Text style={[CSS.orange,CSS.font15]}>Minimum offer value                 $25</Text>
+                            <Text style={[CSS.orange,CSS.font15]}>Minimum offer value        $25</Text>
                         </View>
                     </View>
                     <View style={Styles.favoriteBtn}>

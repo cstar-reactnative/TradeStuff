@@ -22,7 +22,7 @@ export default {
     itemsView:{
         flex:1,
         width:'100%',
-        paddingLeft:30,
+        paddingLeft:10,
         paddingTop:15,
         flexDirection:"row",
         justifyContent: 'space-between',
@@ -74,7 +74,6 @@ export default {
         marginTop:0,
         marginRight:10,
         borderWidth:5,
-        borderRadius:10,
         borderColor:Colors.greenColor
     },
     itemImage: {
