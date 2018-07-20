@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import Styles from './styles';
-import { Button} from 'react-native-material-ui';
+import { Button, Icon} from 'react-native-material-ui';
 import { AppTheme ,BackButton} from '@components';
 
 import {Images,CSS} from '@theme';
@@ -55,7 +55,7 @@ export default class MakeOffer extends Component {
             <AppTheme >
                 <View style = {Styles.container} >
                     <View style={Styles.headerView}>
-                        <BackButton text="Back" onPress = {()=> this.props.navigation.goBack()}>BACK</BackButton>
+                        <BackButton text="Back" onPress = {()=> this.props.navigation.goBack()}>CONFIRM OFFER</BackButton>
                     </View>
                     <ScrollView style={Styles.detailScroll}>
                         <View style={Styles.oneItem}>
@@ -63,23 +63,26 @@ export default class MakeOffer extends Component {
                             <View style={Styles.itemTitle}>
                                 <Text style={[CSS.font20,CSS.white]}>{this.state.itemOne.name}</Text>
                                 <View style={Styles.priceLabel}>
-                                    <Text style={[CSS.font20,CSS.backDarkGray,CSS.white,{padding:10}]}>$25</Text>
+                                    <Text style={[CSS.font20,CSS.backOrange,CSS.white,{padding:10}]}>$25</Text>
                                 </View>
                             </View>
                         </View>
-                        <View style={Styles.oneItem}>
+                        <View style={Styles.iconView}>
+                            <Icon style={Styles.shareBtn} name = "arrow-upward" size={30}/>
+                        </View>
+                        <View style={Styles.twoItem}>
                             <Image style={Styles.itemImage} source = {this.state.itemTwo.image} />
                             <View style={Styles.itemTitle}>
-                                <Text style={[CSS.font20,CSS.white]}>{this.state.itemTwo.name}</Text>
+                             <Text style={[CSS.font20,CSS.white]}>{this.state.itemTwo.name}</Text>
                                 <View style={Styles.priceLabel}>
-                                    <Text style={[CSS.font20,CSS.backDarkGray,CSS.white,{padding:10}]}>$37</Text>
+                                    <Text style={[CSS.font20,CSS.backGreen,CSS.white,{padding:10}]}>$37</Text>
                                 </View>
                             </View>
                         </View>
                     </ScrollView>
                     <View style={Styles.bottomView}>
                         <View style={Styles.addStuffBtn}>
-                            <Button primary raised text="MAKE OFFER" style={{'container':Styles.radius10Btn}} onPress={this.makeOffer.bind(this)} />
+                            <Button primary raised text="CONFIRM OFFER" style={{'container':Styles.radius10Btn}} onPress={this.makeOffer.bind(this)} />
                         </View>
                     </View>
                 </View>

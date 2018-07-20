@@ -46,6 +46,15 @@ export default {
         borderRadius:10,
         borderColor:Colors.orangeColor
     },
+    twoItem: {
+        height:150,        
+        marginLeft:10,
+        marginTop:0,
+        marginRight:10,
+        borderWidth:5,
+        borderRadius:10,
+        borderColor:Colors.greenColor
+    },
     itemImage: {
         width:'100%',
         height:'100%'
@@ -58,5 +67,15 @@ export default {
     priceLabel: {
         position:'absolute',
         right:0
-    }
+    },
+    iconView:{
+        alignItems: 'center',
+        margin:0,
+    },
+    shareBtn: {
+        marginTop: 30,
+        marginBottom: 0,
+        alignItems: 'center',
+        color: Colors.greenColor,
+    },
 };

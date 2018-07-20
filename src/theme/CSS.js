@@ -48,6 +48,12 @@ export default {
     backDarkGray:{
         backgroundColor:Colors.darkGrayColor
     },
+    backOrange:{
+        backgroundColor: Colors.orangeColor
+    },
+    backGreen:{
+        backgroundColor: Colors.greenColor
+    },
     fullContent:{
         width:'100%',
         height:'100%'
