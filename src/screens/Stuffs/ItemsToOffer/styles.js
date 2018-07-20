@@ -41,8 +41,17 @@ export default {
         fontSize: 25,
         height:'100%',
         color:Colors.whiteColor,
-        backgroundColor:'#f79a0e',
+        backgroundColor:Colors.orangeColor,
         height:35,
+    },
+    carouselPriceGreen: {
+        fontSize: 25,
+        height:'100%',
+        color:Colors.whiteColor,
+        backgroundColor:Colors.greenColor,
+        height:35,
+        position: 'absolute',
+        right: 0
     },
     itemsView:{
         flex:1,

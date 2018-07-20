@@ -81,7 +81,7 @@ export default {
     },
     subtitleFont: {
         fontSize:14,
-        color: Constants.Colors.Green,
+        color: Constants.Colors.Orange,
         textAlign:'center'
     },
     descDesc: {

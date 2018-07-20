@@ -6,7 +6,7 @@ import {
     Alert,
     TouchableOpacity
 } from 'react-native';
-
+import Constants from '../../../constants';
 import {Images,CSS} from '@theme';
 import {AppTheme} from '@components';
 import Styles from './styles';
@@ -50,10 +50,11 @@ export default class ItemsToOffer extends Component {
 
     renderItem = ({ item, index }) => (
         <TouchableOpacity onPress = {()=>this.pressItem(index)}>
-            <View style={Styles.contentItemView} >
+            <View style={Styles.contentItemView} >        
                 <View style={Styles.contentItemImage}>
                     <View style={Styles.contenItemMainGreen}>
                         <Image style={Styles.imageStyle}  source={item.thumbnail} />
+                        <Text style={Styles.carouselPriceGreen}>$25</Text>
                     </View>
                 </View>
             
@@ -73,15 +74,15 @@ export default class ItemsToOffer extends Component {
                         <View style={Styles.titleView}>
                             <Text style={[CSS.darkGray,CSS.font15]}>Item Title</Text>
                             <Text style={[CSS.darkGray,CSS.font15]}>(used)</Text>
-                            <Text style={[CSS.orange,CSS.font15]}>Minimum offer value               $25</Text>
+                            <Text style={[CSS.orange,CSS.font15]}>Minimum offer value                 $25</Text>
                         </View>
                     </View>
                     <View style={Styles.favoriteBtn}>
                         <Text style={Styles.carouselPrice}>$25</Text>
                     </View>
                     </View>
-                    <View>
-                        <Text style={Styles.sectionTitle}>Select stuff to offer</Text>
+                    <View style={{alignItems: 'center', padding: 10}}>
+                        <Text style={Styles.sectionTitle}>Select Stuff to Offer</Text>
                     </View>
                     <View style={Styles.contentList}>
                         <GridList
@@ -96,7 +97,7 @@ export default class ItemsToOffer extends Component {
                      <View style={Styles.bottomView}>
                         <View style={Styles.bottomButton}>
                             <View style={Styles.button}>
-                                <Button primary raised text="CANCEL" onPress={this.pressCancel.bind(this)} />
+                                <Button accent raised text="CANCEL" onPress={this.pressCancel.bind(this)} />
                             </View>
                            
                         </View>

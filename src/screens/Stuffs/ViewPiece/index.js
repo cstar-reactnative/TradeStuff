@@ -34,7 +34,7 @@ export default class ViewPiece extends Component {
                 title:"STUFF",
                 minOffer: "Min Offer Value: $22",
                 subTitle: "John Doe ",
-                subTitle2:"- CA, United States",
+                subTitle2:"- Los Angeles, CA",
                 desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
             }
         });
@@ -126,7 +126,7 @@ export default class ViewPiece extends Component {
                     <View style={Styles.makeofferView}>
                             <View style={Styles.descTitle}>
                                 <Text style={{color:Constants.Colors.Orange}} onPress={this.pressUsername.bind(this)}>{this.state.detail.subTitle} 
-                                <Text style={{color:Constants.Colors.Green}}>{this.state.detail.subTitle2} </Text>
+                                <Text style={{color:Constants.Colors.DarkGrey}}>{this.state.detail.subTitle2} </Text>
                                 </Text>
                             </View>
 

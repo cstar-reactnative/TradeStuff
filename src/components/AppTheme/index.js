@@ -12,7 +12,8 @@ import { COLOR,ThemeProvider, Icon, Searchable} from 'react-native-material-ui';
 const uiTheme = {
     palette: {
         primaryColor: Colors.greenColor,
-        secondaryColor: Colors.darkGrayColor
+        secondaryColor: Colors.lightGrayColor,
+        accentColor: Colors.darkGrayColor,
     },
     toolbar: {
         container: {
