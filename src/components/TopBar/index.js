@@ -3,13 +3,17 @@ import {
     View,
     Text,
     TextInput,
-    TouchableOpacity
+    TouchableOpacity,
+    Dimensions
 } from 'react-native';
 
 import { Header,SearchBar } from 'react-native-elements';
 import Constants from '../../constants';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
+const width = Dimensions.get('window').width
+const height = Dimensions.get('window').height
+    
 export default class TopBar extends Component {
 
     constructor(props) {
@@ -31,6 +35,7 @@ export default class TopBar extends Component {
                         onChangeText={(value)=>this.setState({ searchText: value })}
                         onClearText={()=>this.setState({ searchText: '' })}
                         placeholder='TradeStuff'
+                        width = {width/1.5}
                         placeholderTextColor={Constants.Colors.Orange}
                         icon={{ type: 'material', color: Constants.Colors.Orange, name: 'search' }}
                         inputStyle={{ backgroundColor:Constants.Colors.White, color: Constants.Colors.Orange}}

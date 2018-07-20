@@ -96,7 +96,6 @@ export default class Account extends Component {
                         </View>
                         
                         <View style={Styles.detailView}>
-                            <ScrollView style={Styles.detailScroll}>
                                 <View style={Styles.detailItem}>
                                     
                                     <Text style={Styles.detailItemlabel}>First Name</Text>                                   
@@ -144,7 +143,7 @@ export default class Account extends Component {
                                         <TextInput ></TextInput>
                                     </View>
                                 </View>
-                            </ScrollView>
+                           
                         </View>
                     </View>                    
                 </View>

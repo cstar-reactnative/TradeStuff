@@ -81,11 +81,18 @@ export default {
         width:'100%',
         height:'100%',
         padding:10,
+        position: 'absolute',
+        top: 10,
+        left: 10,
+        right: 10,
+        bottom: 10
     },
 
     detailItem: {
         width:'100%',
         height:70,
+        marginLeft: 10,
+        marginRight: 10,
         flexDirection:'column',
     },
     detailItemlabel: {

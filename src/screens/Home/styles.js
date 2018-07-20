@@ -9,13 +9,13 @@ export default {
     },
     headerScroll: {
         height: 80,
-        backgroundColor:Colors.darkGrayColor
+        backgroundColor:Colors.verylightGrayColor
     },
     headerScrollView: {
         width: '100%',
         height: '100%',
         padding: 1,
-        backgroundColor:Colors.darkGrayColor
+        backgroundColor:Colors.verylightGrayColor
     },
 
     contentList: {
@@ -49,12 +49,19 @@ export default {
         justifyContent:'center'
     },
     addStuffBtn: {
-        width: 200,
+        width: 180,
         alignItems:'center',
-        backgroundColor:'transparent'
+        backgroundColor:'transparent',
+
     },
     radius10Btn:{
-        width:'100%',borderRadius:5,height:'100%'
+        flexDirection:'row',
+        backgroundColor:'#79af13',
+        width:"100%",
+        borderRadius:25,
+        height:"100%",
+        justifyContent:'center',
+        alignItems:'center'
     },
     scrollArrowLeft:{
         position:'absolute',
@@ -67,5 +74,9 @@ export default {
         width:30,
         height:'100%',
         alignItems:'flex-end',
-    }
+    },
+    imageContainer:{
+        borderColor:Colors.orange,
+        borderWidth:2,
+        borderRadius:8}
 };

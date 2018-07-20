@@ -6,7 +6,7 @@ export default {
     headerScrollItem: {
         width:100,
         height:'100%',
-        backgroundColor:Colors.darkGrayColor
+        backgroundColor:Colors.verylightGrayColor
     },
     headerScrollItemIcon: {
         height: '60%',
@@ -21,11 +21,11 @@ export default {
         alignItems:'center',
     },
     labelColor: {
-        color:Colors.whiteColor,
+        color:Colors.blackColor,
         fontSize: 15
     },
     imageColor: {
-        color:Colors.whiteColor
+        color:Colors.blackColor
     },
     headerScrollArrow: {
         height:'100%',
@@ -34,7 +34,7 @@ export default {
     headerScrollArrowIcon: {
         height: '100%',
         width: '100%',
-        backgroundColor:Colors.darkGrayColor,
+        backgroundColor:Colors.verylightGrayColor,
         alignItems:'center',
         justifyContent: 'center',
     },
