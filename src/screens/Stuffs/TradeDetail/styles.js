@@ -42,7 +42,7 @@ export default {
         paddingRight: 22
     },
     detailView:{
-        margin:10,
+        marginTop:10,
         alignItems:'center',
         backgroundColor:Colors.lightGrayColor,
         padding:10,
