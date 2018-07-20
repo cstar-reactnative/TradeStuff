@@ -6,6 +6,7 @@ import {
     Alert,
     TouchableOpacity,
 } from 'react-native';
+import IconEntypo from 'react-native-vector-icons/Entypo';
 import { Header } from 'react-native-elements';
 import Constants from '../../../constants';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -72,8 +73,8 @@ export default class TradeDetail extends Component {
                                 <View style={{width:10,height:'100%'}} />
                             </View>
                             <View>
-                            <Icon style={Styles.imageColor2} name="arrow-forward" size={34} />
-                            <Icon style={Styles.imageColor1} name="arrow-back" size={34} />
+                            <IconEntypo style={Styles.imageColor2} name="arrow-bold-right" size={34} />
+                            <IconEntypo style={Styles.imageColor1} name="arrow-bold-left" size={34} />
                             </View>
                             <View style={Styles.contentItemImage}>
                                 <View style={{width:10,height:'100%'}} />
@@ -84,25 +85,25 @@ export default class TradeDetail extends Component {
                         </View>
 
                         <View style={Styles.subTitleView}>
-                            <Text style={[CSS.font18,CSS.darkGray]} >Please send your stuff to:</Text>
+                            <Text style={[CSS.font16,CSS.darkGray]} >Please send your stuff to:</Text>
                         </View>
 
                         <View style={Styles.subTitleView}>
-                        <Text style={[CSS.font18,CSS.darkGray]} >John Doe</Text>
-                        <Text style={[CSS.font18,CSS.darkGray]} >1234 Main St.</Text>
-                        <Text style={[CSS.font18,CSS.darkGray]} >City, CA 91713</Text>
+                        <Text style={[CSS.font16,CSS.darkGray]} >John Doe</Text>
+                        <Text style={[CSS.font16,CSS.darkGray]} >1234 Main St.</Text>
+                        <Text style={[CSS.font16,CSS.darkGray]} >City, CA 91713</Text>
                         </View>
                         
                         <View style = {Styles.detailView}>
-                        <Text style={[CSS.font18,CSS.darkGray]} >Trade Details</Text>
-                        <Text style={[CSS.font18,CSS.darkGray]} >Offer Sent: June 25, 2018 6:25PM</Text>
-                        <Text style={[CSS.font18,CSS.darkGray]} >Offer Accepted: June 26, 2018 5:15PM</Text>
+                        <Text style={[CSS.font16,CSS.darkGray]} >Trade Details</Text>
+                        <Text style={[CSS.font16,CSS.darkGray]} >Offer Sent: June 25, 2018 6:25PM</Text>
+                        <Text style={[CSS.font16,CSS.darkGray]} >Offer Accepted: June 26, 2018 5:15PM</Text>
                         <View style={{flexDirection:'row'}}>
                         <TouchableOpacity onPress={this.pressSent.bind(this)}>
-                            <Text style={Styles.sentMark}>MARK 'SENT' </Text>                            
+                            <Text style={Styles.sentMark}>MARK "SENT" </Text>                            
                         </TouchableOpacity>
                         <TouchableOpacity onPress={this.pressReceived.bind(this)}>
-                            <Text style = {Styles.receivedMark}>MARK 'RECEIVED' </Text>                          
+                            <Text style = {Styles.receivedMark}>MARK "RECEIVED" </Text>                          
                         </TouchableOpacity>  
                         </View>
                         </View>

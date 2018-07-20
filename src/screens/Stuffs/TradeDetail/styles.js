@@ -20,28 +20,34 @@ export default {
     },
 
     subTitleView:{
-        alignItems:'center'
+        alignItems:'center',
+        marginTop:15
     },
     sentMark:{
         backgroundColor: Colors.whiteColor,
         color: Colors.greenColor,
         padding: 15, 
-        margin:10,
-        marginTop:20
+        margin:15,
+        marginTop:20,
+        paddingLeft: 47,
+        paddingRight: 47
     },
     receivedMark:{
         backgroundColor: Colors.whiteColor,
         color: Colors.orangeColor,
         padding: 15,
-        margin:10,
-        marginTop:20
+        margin:15,
+        marginTop:20,
+        paddingLeft: 22,
+        paddingRight: 22
     },
     detailView:{
         margin:10,
         alignItems:'center',
         backgroundColor:Colors.lightGrayColor,
         padding:10,
-        flex:1
+        flex:1,
+        marginTop: 10
     },
     contentItemView:{
         width: '100%',
