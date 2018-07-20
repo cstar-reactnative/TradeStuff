@@ -10,7 +10,28 @@ export default {
         height: 50,
         margin:10
     },
-
+    titleView:{
+        height:30,
+        width:'100%',
+        paddingLeft:30,
+        paddingRight:30,
+        paddingTop:10,
+        flexDirection:"column",
+        justifyContent: 'space-between',
+    },
+    itemsView:{
+        flex:1,
+        width:'100%',
+        paddingLeft:30,
+        paddingTop:15,
+        flexDirection:"row",
+        justifyContent: 'space-between',
+        alignItems: 'flex-start'
+    },
+    mainItem:{
+        width:60,
+        height:60
+    },
     contents : {
         width:'100%',
         height:'100%',
@@ -48,7 +69,7 @@ export default {
         borderColor:Colors.orangeColor
     },
     twoItem: {
-        height:150,        
+        height:100,        
         marginLeft:10,
         marginTop:0,
         marginRight:10,

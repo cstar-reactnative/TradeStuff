@@ -79,9 +79,17 @@ export default class MakeOffer extends Component {
                             <Icon style={Styles.shareBtn} name = "arrow-upward" size={30}/>
                         </View>
                         <View style={Styles.twoItem}>
-                            <Image style={Styles.itemImage} source = {this.state.itemTwo.image} />
-                            <View style={Styles.itemTitle}>
-                             <Text style={[CSS.font20,CSS.white]}>{this.state.itemTwo.name}</Text>
+                        <View style={Styles.itemsView}>
+                            <View style={Styles.mainItem}>
+                                <Image style={CSS.fullContent} source={this.state.itemTwo.image}/>
+                            </View>
+                            <View style={Styles.titleView}>
+                                <Text style={[CSS.darkGray,CSS.font15]}>Item Title</Text>
+                                <Text style={[CSS.darkGray,CSS.font15]}>(used)</Text>
+                                <Text style={[CSS.green,CSS.font15]}>Minimum offer value                 $25</Text>
+                            </View>
+                            </View>
+                            <View style={Styles.itemTitle}>                             
                                 <View style={Styles.priceLabel}>
                                     <Text style={[CSS.font20,CSS.backGreen,CSS.white,{padding:10}]}>$37</Text>
                                 </View>
