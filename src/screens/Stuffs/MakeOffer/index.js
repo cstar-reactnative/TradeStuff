@@ -10,6 +10,7 @@ import {
 import { Header } from 'react-native-elements';
 import Constants from '../../../constants';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
+import IconEntypo from 'react-native-vector-icons/Entypo';
 import Styles from './styles';
 import { Button, Icon} from 'react-native-material-ui';
 import { AppTheme ,BackButton} from '@components';
@@ -76,7 +77,7 @@ export default class MakeOffer extends Component {
                             </View>
                         </View>
                         <View style={Styles.iconView}>
-                            <IconFontAwesome style={Styles.shareBtn} name = "arrow-up" size={30}/>
+                            <IconEntypo style={Styles.shareBtn} name = "arrow-bold-up" size={30}/>
                         </View>
                         <View style={Styles.twoItem}>
                         <View style={Styles.itemsView}>
