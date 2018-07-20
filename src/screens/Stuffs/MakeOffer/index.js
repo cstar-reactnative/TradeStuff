@@ -80,7 +80,7 @@ export default class MakeOffer extends Component {
                             <IconEntypo style={Styles.shareBtn} name = "arrow-bold-up" size={30}/>
                         </View>
                         <View style={Styles.twoItem}>
-                        <View style={Styles.itemsView}>
+                            <View style={Styles.itemsView}>
                             <View style={Styles.mainItem}>
                                 <Image style={CSS.fullContent} source={this.state.itemTwo.image}/>
                             </View>
