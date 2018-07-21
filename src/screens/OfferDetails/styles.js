@@ -2,9 +2,10 @@
 import {Colors} from '@theme';
 
 export default {
-
     container: {
         flex: 1, 
+        padding: 0,
+        margin: 0
     },
     headerView: {
         height: 50,
@@ -42,17 +43,21 @@ export default {
     },
     detailsText:{
         alignItems: 'center',
-        margin: 10,
+        padding: 10,
+        backgroundColor: Colors.lightGrayColor,
+    },
+    detailScroll:{
+        backgroundColor: Colors.lightGrayColor,
     },
     bottomView: {
         position:'absolute',
         width:'100%',
         bottom:0,
+        backgroundColor: Colors.lightGrayColor,
         height:90,
         alignItems:"center",
         flexDirection: 'row',
         padding:5,
-        backgroundColor:'transparent',
         justifyContent:'center'
     },
     addStuffBtn: {
@@ -68,6 +73,9 @@ export default {
         marginTop:3,
         height:30,
     },
+    diffBg:{
+        backgroundColor: Colors.whiteColor
+    },
     oneItem: {
         height:250,        
         margin:10,
@@ -79,10 +87,11 @@ export default {
         height:90,        
         marginLeft:10,
         marginTop:0,
+        marginBottom:10,
         padding:0,
         marginRight:10,
         borderWidth:6,
-        borderColor:Colors.greenColor
+        borderColor:Colors.greenColor,
     },
     itemImage: {
         width:'100%',
@@ -103,7 +112,7 @@ export default {
         alignItems: 'center',
         margin:0,
         padding:0,
-        marginTop: 30,
+        marginTop: 20,
         marginBottom: 0,
         padding:0,
     },

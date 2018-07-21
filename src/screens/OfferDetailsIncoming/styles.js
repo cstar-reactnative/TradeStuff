@@ -42,7 +42,13 @@ export default {
     },
     detailsText:{
         alignItems: 'center',
-        margin: 10,
+        margin: 10,backgroundColor: Colors.lightGrayColor,
+    },
+    detailScroll:{
+        backgroundColor: Colors.lightGrayColor,
+    },
+    diffBg:{
+        backgroundColor: Colors.whiteColor
     },
     bottomView: {
         position:'absolute',
@@ -50,6 +56,7 @@ export default {
         bottom:0,
         height:90,
         alignItems:"center",
+        backgroundColor: Colors.lightGrayColor,
         flexDirection: 'row',
         padding:5,
         backgroundColor:'transparent',

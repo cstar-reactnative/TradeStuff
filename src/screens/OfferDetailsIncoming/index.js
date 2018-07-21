@@ -56,7 +56,8 @@ export default class OfferDetailsIncoming extends Component {
             'Are you sure you want to accept this offer? Trade agreements are binding.',
             [
               {text: 'Yes', onPress: () => {
-                  
+                this.props.navigation.navigate("AcceptedTrade");
+                EventRegister.emit('moveTab', 'Accept');
                 }
             },
               {text: 'No',  onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
@@ -79,6 +80,8 @@ export default class OfferDetailsIncoming extends Component {
                     outerContainerStyles={{ backgroundColor: Constants.Colors.MediumGrey, elevation: 5 }}
                 />
                     <ScrollView style={Styles.detailScroll}>
+                    <View style = {Styles.diffBg}>
+                    <TouchableOpacity onPress={()=>this.props.navigation.navigate("ViewPiece", {index: 0, makeOffer: 'no'})}>
                         <View style={Styles.oneItem}>
                             <Image style={Styles.itemImage} source = {this.state.itemOne.image} />
                             <View style={Styles.itemTitle}>
@@ -88,9 +91,11 @@ export default class OfferDetailsIncoming extends Component {
                                 </View>
                             </View>
                         </View>
+                        </TouchableOpacity>
                         <View style={Styles.iconView}>
                             <IconEntypo style={Styles.shareBtn} name = "arrow-bold-down" size={30}/>
                         </View>
+                        <TouchableOpacity onPress={()=>this.props.navigation.navigate("ViewPiece", {index: 0, makeOffer: 'no'})}>
                         <View style={Styles.twoItem}>
                             <View style={Styles.itemsView}>
                             <View style={Styles.mainItem}>
@@ -107,6 +112,8 @@ export default class OfferDetailsIncoming extends Component {
                                     <Text style={[CSS.font20,CSS.backGreen,CSS.white,{padding:10}]}>$37</Text>
                                 </View>
                             </View>
+                            </View>
+                            </TouchableOpacity>
                         </View>
                         <View style={Styles.detailsText}>
                         <Text style={[CSS.font16,CSS.darkGray]} >Offer Received: June 25, 2018 6:25PM</Text>

@@ -56,6 +56,7 @@ export const SentOffersStack = createStackNavigator({
     SentOffersStarter: {screen:Sent},
     NotificationDialog: {screen:NotificationDialog},
     OfferDetails: {screen: OfferDetails},
+    ViewPiece: {screen:ViewPiece},
 },{
     headerMode:'none'
 });
@@ -66,6 +67,7 @@ export const IncomingOffersStack = createStackNavigator({
     TradeComplete:{screen:TradeComplete},
     NotificationDialog: {screen:NotificationDialog},
     OfferDetailsIncoming: {screen: OfferDetailsIncoming},
+    AcceptedTrade: {screen: Trades}
 },{
     headerMode:'none'
 });

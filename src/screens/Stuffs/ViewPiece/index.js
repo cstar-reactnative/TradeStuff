@@ -149,7 +149,7 @@ export default class ViewPiece extends Component {
                             </View>
 
                             <View style={[Styles.offerBtn,CSS.justifyCenter]}>
-                                <Button primary raised text="MAKE OFFER" onPress={this.pressMakeOffer.bind(this)} />
+                                {(this.props.navigation.state!==undefined&&this.props.navigation.state.params.makeOffer==='no')?null:<Button primary raised text="MAKE OFFER" onPress={this.pressMakeOffer.bind(this)} />}
                             </View>
                         </View>
                 </View>

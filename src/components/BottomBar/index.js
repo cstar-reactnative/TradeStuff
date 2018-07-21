@@ -38,6 +38,11 @@ export default class BottomBar extends Component {
                     active:"SentOrdersTab",
                 })
             }
+            if(data=="Accept") {
+                this.setState({
+                    active:"TradesTab",
+                })
+            }
         })
     }
 

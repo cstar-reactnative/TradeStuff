@@ -20,8 +20,7 @@ export default {
         height: 200,
         justifyContent: 'center',
         alignItems:'center',
-        padding:30,
-        flexDirection:'row'
+        flexDirection:'row',
     },
     contentIcon:{
         height:'100%',
