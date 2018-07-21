@@ -12,7 +12,7 @@ export default {
         height:'100%',
     },
     imageColor:{
-        color: Colors.greenColor
+        color: Colors.greenColor,
     },
     contentItemView:{
         width: '100%',
@@ -22,6 +22,11 @@ export default {
         alignItems:'center',
         padding:30,
         flexDirection:'row'
+    },
+    contentIcon:{
+        height:'100%',
+        justifyContent:'center',
+        alignItems: 'center'
     },
     contentItemImage:{
         flex:1,

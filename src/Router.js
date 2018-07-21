@@ -23,7 +23,7 @@ import Account from './screens/Account'
 import AccountDetails from './screens/Account/AccountDetails'
 import Wants from './screens/Account/Wants'
 import Likes from './screens/Account/Likes'
-
+import OfferDetails from './screens/OfferDetails'
 import NotificationDialog from './screens/NotificationDialog'
 import ViewPiece from './screens/Stuffs/ViewPiece'
 import PersonalStuff from './screens/Stuffs/PersonalStuff'
@@ -53,7 +53,8 @@ export const HomeStack = createStackNavigator({
 
 export const SentOffersStack = createStackNavigator({
     SentOffersStarter: {screen:Sent},
-    NotificationDialog: {screen:NotificationDialog}
+    NotificationDialog: {screen:NotificationDialog},
+    OfferDetails: {screen: OfferDetails},
 },{
     headerMode:'none'
 });

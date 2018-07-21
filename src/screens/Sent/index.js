@@ -61,20 +61,20 @@ export default class Sent extends Component {
     renderItem = ({ item, index }) => (
         <View style={Styles.contentItemView} >
 
-            <TouchableOpacity style={Styles.contentItemImage}>
+            <TouchableOpacity style={Styles.contentItemImage} onPress={()=>this.props.navigation.navigate('OfferDetails')}>
                 <View style={Styles.contentItemImage}>
                     <View style={Styles.contenItemMainGreen}>
                         <Image style={Styles.imageStyle}  source={item.thumbnail} />
                     </View>
                     <View style={{width:10,height:'100%'}} />
                 </View>
-            </TouchableOpacity> 
-                <View>
+            
+                <View style={Styles.contentIcon}>
                 <IconEntypo style={Styles.imageColor} name="arrow-bold-right" size={34} />
                 </View>
             
 
-            <TouchableOpacity style={Styles.contentItemImage}>
+            
                 <View style={Styles.contentItemImage}>
                     <View style={{width:10,height:'100%'}} />
                     <View style={Styles.contenItemMainYellow}>
