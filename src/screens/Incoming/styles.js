@@ -11,7 +11,14 @@ export default {
         width:'100%',
         height:'100%'
     },
-
+    imageColor:{
+        color: Colors.orangeColor,
+    },
+    contentIcon:{
+        height:'100%',
+        justifyContent:'center',
+        alignItems: 'center'
+    },
     contentItemView:{
         width: '100%',
         padding:20,

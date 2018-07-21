@@ -24,6 +24,7 @@ import AccountDetails from './screens/Account/AccountDetails'
 import Wants from './screens/Account/Wants'
 import Likes from './screens/Account/Likes'
 import OfferDetails from './screens/OfferDetails'
+import OfferDetailsIncoming from './screens/OfferDetailsIncoming'
 import NotificationDialog from './screens/NotificationDialog'
 import ViewPiece from './screens/Stuffs/ViewPiece'
 import PersonalStuff from './screens/Stuffs/PersonalStuff'
@@ -64,6 +65,7 @@ export const IncomingOffersStack = createStackNavigator({
     TradeDetail:{screen:TradeDetail},
     TradeComplete:{screen:TradeComplete},
     NotificationDialog: {screen:NotificationDialog},
+    OfferDetailsIncoming: {screen: OfferDetailsIncoming},
 },{
     headerMode:'none'
 });

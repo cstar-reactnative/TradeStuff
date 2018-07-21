@@ -6,7 +6,7 @@ import {
     Alert,
     TouchableOpacity
 } from 'react-native';
-
+import IconEntypo from 'react-native-vector-icons/Entypo';
 import {Images} from '@theme';
 import {BottomBar,TopBar,AppTheme} from '@components';
 import Styles from './styles';
@@ -76,20 +76,19 @@ export default class Incoming extends Component {
     renderItem = ({ item, index }) => (
         <View style={Styles.contentItemView} >
 
-            <TouchableOpacity style={Styles.contentItemImage}>
+            <TouchableOpacity style={Styles.contentItemImage} onPress={()=>this.props.navigation.navigate('OfferDetailsIncoming')}>
                 <View style={Styles.contentItemImage}>
                     <View style={Styles.contenItemMainGreen}>
                         <Image style={Styles.imageStyle}  source={item.thumbnail} />
                     </View>
                     <View style={{width:10,height:'100%'}} />
-                </View>
-            </TouchableOpacity>
+                </View>            
 
-            <View>
-            <Icon style={Styles.imageColor} name="arrow-back" size={34} />
+            <View style={Styles.contentIcon}>
+            <IconEntypo style={Styles.imageColor} name="arrow-bold-left" size={34} />
             </View>
 
-            <TouchableOpacity style={Styles.contentItemImage}>
+            
                 <View style={Styles.contentItemImage}>
                     <View style={{width:10,height:'100%'}} />
                     <View style={Styles.contenItemMainYellow}>
@@ -97,14 +96,6 @@ export default class Incoming extends Component {
                     </View>
                 </View>
             </TouchableOpacity>
-
-            <View style={Styles.acceptStyle}>
-                <Button accent raised style={Styles.acceptButton} text="ACCEPT" onPress={()=>this.pressedAccept(index)} />                
-            </View>
-
-            <View style={Styles.declineStyle}>
-                <Button accent raised style={Styles.declineButton} text="DECLINE" onPress={()=>this.pressedDecline(index)} />                
-            </View>
 
         </View>
     );
