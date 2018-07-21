@@ -2,82 +2,79 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
-    FlatList,
-    Switch
+    Image,
+    Alert,
+    TouchableOpacity
 } from 'react-native';
 
-//import {Colors} from '@theme';
-import {AppTheme,Utils,BackButton} from '@components';
+import {Images,CSS} from '@theme';
+import {AppTheme,BackButton} from '@components';
 import Styles from './styles';
-import { Button } from 'react-native-material-ui';
+import { Button ,Icon} from 'react-native-material-ui';
+import GridList from 'react-native-grid-list';
 import { copy } from '@utils';
 
-export default class Wants extends Component {
+export default class Likes extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = ({
-            wants : [
-                {name:"Tech", status:true},
-                {name:"Housing", status:true},
-                {name:"Sports", status:false},
-                {name:"Books", status:false},
-                {name:"Toys", status:true},
-                {name:"Board Games", status:true},
-                {name:"Cars", status:true},
-                {name:"Clothing", status:false},
-                {name:"Makeup", status:true},
-                {name:"Outdoors", status:true},
-                {name:"Decorations", status:false}                
-            ]
+            likesItems: [
+                { thumbnail: Images.img_1 },
+                { thumbnail: Images.img_2 },
+                { thumbnail: Images.img_3 },
+                { thumbnail: Images.img_4 },
+                { thumbnail: Images.img_5 },
+                { thumbnail: Images.img_2 },
+            ],
         });
     }
 
-    onPressSwitch(index,value) {
+    
 
-        var mWants = copy(this.state.wants);
-        // alert(index), alert(value)
-        mWants[index].status = value;
-        this.setState({
-            wants:mWants
-        })
-        // alert(this.state.wants[index].status)
+    pressItem(index){
+
+        this.props.navigation.navigate("ViewPiece",{index:index});
     }
-
-    renderItems({item, index}){
-        const {navigate} = this.props.navigation
-        return (
-            <View style={Styles.item}>
-                <View style={Styles.titleLabel}>
-                    <Text medium >{item.name}</Text>
+    
+    renderItem = ({ item, index }) => (
+        <TouchableOpacity onPress={() => this.pressItem(index) }>
+        <View style={Styles.contentItemView} >
+            <View style={Styles.contentItemImage}>
+                <View style={Styles.contenItemMainYellow}>
+                     <Image style={Styles.imageStyle}  source={item.thumbnail} />
                 </View>
-                <View style={Styles.switchItem}>
-                    <Switch value={item.status} onValueChange={(value)=>{this.onPressSwitch(index,value)}} />
+                <View style={Styles.priceIcon}>
+                    <Text style={Styles.priceText}>$25</Text>
                 </View>
             </View>
-        )
-    }
+            
+        </View>
+        </TouchableOpacity>
+    );
 
     render() {
         return (
             <AppTheme >
                 <View style={Styles.container}>
-                    <View style={Styles.headerView} >
+                    {/* <View style={Styles.headerView} >
                         <BackButton text="Back" onPress = {()=> this.props.navigation.goBack()}>BACK</BackButton>
-                    </View>
+                    </View> */}
 
-                    <View style={Styles.contentView} >
-                        <FlatList
-                            style={Styles.scrollView} 
-                            numColumns = {1}
-                            data = {this.state.wants}
-                            renderItem = {this.renderItems.bind(this)}
-                            keyExtractor = {(item, index) => index.toString()}
+                    <View style={Styles.contentList}>
+                        <GridList
+                            showSeparator
+                            animationInitialBackgroundColor="white"
+                            data={this.state.likesItems}
+                            numColumns={2}
+                            renderItem={this.renderItem}
                             />
                     </View>
+
                 </View>
+                
             </AppTheme>
-        )
+        );
     }
-}
+};

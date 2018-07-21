@@ -46,7 +46,10 @@ export default class Likes extends Component {
                      <Image style={Styles.imageStyle}  source={item.thumbnail} />
                 </View>
                 <View style={Styles.favoriteIcon}>
-                    <Icon style={CSS.darkGray} name = "favorite" size={30}/>
+                    <Icon style={Styles.darkGray} name = "favorite" size={30}/>
+                </View>
+                <View style={Styles.priceIcon}>
+                    <Text style={Styles.priceText}>$25</Text>
                 </View>
             </View>
             
@@ -58,9 +61,9 @@ export default class Likes extends Component {
         return (
             <AppTheme >
                 <View style={Styles.container}>
-                    <View style={Styles.headerView} >
+                    {/* <View style={Styles.headerView} >
                         <BackButton text="Back" onPress = {()=> this.props.navigation.goBack()}>BACK</BackButton>
-                    </View>
+                    </View> */}
 
                     <View style={Styles.contentList}>
                         <GridList

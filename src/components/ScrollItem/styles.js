@@ -20,9 +20,25 @@ export default {
         justifyContent: 'center',
         alignItems:'center',
     },
+    headerScrollSmallItemIcon: {
+        height: '65%',
+        width: '100%',
+        alignItems:'center',
+        justifyContent: 'flex-end',
+    },
+    headerScrollSmallItemLabel: {
+        height: '35%',
+        width: '100%',
+        justifyContent: 'center',
+        alignItems:'center',
+    },
     labelColor: {
         color:Colors.blackColor,
         fontSize: 15
+    },
+    SmalllabelColor: {
+        color:Colors.blackColor,
+        fontSize: 10
     },
     imageColor: {
         color:Colors.blackColor

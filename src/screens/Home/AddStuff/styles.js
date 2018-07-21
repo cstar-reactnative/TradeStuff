@@ -40,16 +40,8 @@ export default {
     },
     addPhotoButton:{
         flex:1,
-        justifyContent: 'center',
-        margin:5,
-        borderWidth: 5,
-        borderColor: Colors.darkGrayColor,
+        margin:5
     },
-    addPhotoButtonBase: {
-        borderWidth: 3,
-        borderColor: Colors.darkGrayColor,
-    },
-
     imageStyle:{
         width:'100%',
         height:'100%',

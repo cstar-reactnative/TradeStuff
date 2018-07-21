@@ -11,6 +11,7 @@ import {
 import {TopBar,AppTheme,ScrollItem,ScrollArrow,AppContainer} from '@components';
 import Styles from './styles';
 import { Icon } from 'react-native-elements'
+import {Images} from '@theme';
 
 import Masonry from 'react-native-masonry';
 
@@ -32,9 +33,9 @@ export default class Home extends Component {
                 { uri: require('../../../assets/images/temp/1.png') },
               ],
             listType:0 // 0:Available, 1:Traded
+
         });
         this.onPressAddStuff = this.onPressAddStuff.bind(this)
-
     }
 
     onPressScrollItem(index) {
@@ -108,7 +109,7 @@ export default class Home extends Component {
                             columns={3} // optional - Default: 2
                             bricks={[
                                 {
-                                    uri: 'https://s-media-cache-ak0.pinimg.com/736x/b1/21/df/b121df29b41b771d6610dba71834e512.jpg',
+                                    uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQpD8mz-2Wwix8hHbGgR-mCFQVFTF7TF7hU05BxwLVO1PS5j-rZA',
                                   },
                                   {
                                     uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQpD8mz-2Wwix8hHbGgR-mCFQVFTF7TF7hU05BxwLVO1PS5j-rZA',
@@ -178,9 +179,7 @@ export default class Home extends Component {
 
                     <View style={Styles.bottomView}>
                         <View style={Styles.addStuffBtn}>
-                            <TouchableOpacity 
-                            style={Styles.radius10Btn}
-                            onPress={this.onPressAddStuff}>
+                            <TouchableOpacity style={Styles.radius10Btn} onPress={this.onPressAddStuff}>
                                 <Icon
                                     type='feather'
                                     color='white'

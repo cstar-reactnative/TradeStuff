@@ -29,8 +29,7 @@ export default {
         height: '100%',
         justifyContent: 'center',
         alignItems:'center',
-        padding:20,
-        
+        padding:20,        
     },
     contentItemImage:{
         width: '100%',

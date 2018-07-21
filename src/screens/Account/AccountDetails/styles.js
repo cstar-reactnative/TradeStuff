@@ -1,5 +1,5 @@
 import Constants from '../../../constants';
-
+import {Colors} from '@theme';
 export default {
     
     container: {
@@ -11,26 +11,29 @@ export default {
         backgroundColor: Constants.Colors.White
     },
     imgsView:{
-
+        flex: 1
     },
     secondSubView: {
         flexDirection: 'row',
-        marginHorizontal: 5
-
+        marginHorizontal: 5,
+        flex: 1,
     },
     firstContainer:{
         backgroundColor: Constants.Colors.VeryLightGrey,
         borderColor: Constants.Colors.Green,
         borderWidth: 1,
-        flexDirection: 'row',
-        padding : 10
+        flexDirection: 'row'
     },
     nameText:{
-        color: Constants.Colors.Green
+        color: Constants.Colors.Green,
+        fontSize: 10
+    },
+    AddressText:{
+        fontSize: 10
     },
     textSubView:{
-        // flex: 2,
-        alignItems: 'center'
+        flex: 1,
+        alignItems: 'center',
     },
     userImg:{
         width: 100,
@@ -41,34 +44,55 @@ export default {
         top: 0,
         right: 0,
     },
-    headerScrollView: {
-        width: '100%',
-        height: '100%',
-        padding: 1,
-        backgroundColor:Constants.Colors.darkGrayColor
-    },
     contentItemView:{
         width: '100%',
         height: '100%',
         justifyContent: 'center',
         alignItems:'center',
-        padding:20, 
+        padding:10, 
     },
     contentItemImage:{
         width: '100%',
         height: '100%',
         borderRadius: 10,
+        borderWidth: 2,
         backgroundColor:Constants.Colors.whiteColor,
+        borderColor:Constants.Colors.Green
     },
     absoluteButtons:{
         position: 'absolute',
         flexDirection: 'row',
-        Bottom: 0,
+        justifyContent: 'center',
+        width:'100%',
+        bottom: 0,
         right: 0,
-        left: 0
+        left: 0,
+        backgroundColor:Colors.lightGrayColor
     },
     radius10Btn:{
-        width:'100%',borderRadius:5,height:'100%'
+        flex: 1,
+        borderRadius:5,
+        height:'100%',
+        color: 'red'
     },
+
+    headerScrollView: {
+        width: '100%',
+        height: '100%',
+        padding: 1,
+        backgroundColor:Colors.verylightGrayColor
+    },
+    scrollArrowLeft:{
+        position:'absolute',
+        width:30,
+        height:'100%',
+    },
+    scrollArrowRight:{
+        position:'absolute',
+        right:0,
+        width:30,
+        height:'100%',
+        alignItems:'flex-end',
+    }
    
 };

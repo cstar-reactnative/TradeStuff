@@ -129,8 +129,7 @@ export default class AddStuff extends Component {
                                     <Image style={Styles.imageStyle} source={this.state.avatarSource} />
                                 </View>
                                 <View style={Styles.addPhotoButton}>
-                                    <Button primary raised text = 'ADD PHOTO' onPress={() => this.openImagePicker()} 
-                                    style={{"container":{'backgroundColor':Constants.Colors.White},"text":{'color':Constants.Colors.Black},"borderWidth": {'width': 14},"borderColor":{'color': Colors.DarkGrey}}}/>
+                                    <Button primary raised text = 'ADD PHOTO' onPress={() => this.openImagePicker()} style={{"container":{'backgroundColor':Constants.Colors.White},"text":{'color':Constants.Colors.Black}}}/>
                                 </View>
                             </View>
                             
