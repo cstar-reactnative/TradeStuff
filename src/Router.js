@@ -46,6 +46,7 @@ export const HomeStack = createStackNavigator({
     ItemsToOffer: {screen:ItemsToOffer},
     MakeOffer: {screen:MakeOffer},
     EditStuff: {screen:EditStuff},
+    Sent: {screen:Sent},
 },{
     headerMode:'none'
 });

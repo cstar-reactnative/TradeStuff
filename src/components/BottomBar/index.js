@@ -33,6 +33,11 @@ export default class BottomBar extends Component {
                     active:"HomeTab",
                 })
             }
+            if(data=="Sent") {
+                this.setState({
+                    active:"SentOrdersTab",
+                })
+            }
         })
     }
 

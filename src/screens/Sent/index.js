@@ -18,7 +18,11 @@ export default class Sent extends Component {
 
     constructor(props) {
         super(props);
-
+        console.log(this.props.navigation);
+        if(this.props.navigation.state.params && this.props.navigation.state.params){
+            console.log('alert')
+            Alert.alert(this.props.navigation.state.params.showAlertHeader, this.props.navigation.state.params.showAlertMsg);
+        }
         this.state = ({
             activeTabBar: 'navigation',
             listItems: [

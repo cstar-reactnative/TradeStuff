@@ -14,7 +14,7 @@ import IconEntypo from 'react-native-vector-icons/Entypo';
 import Styles from './styles';
 import { Button, Icon} from 'react-native-material-ui';
 import { AppTheme ,BackButton} from '@components';
-
+import { EventRegister } from 'react-native-event-listeners'
 import {Images,CSS} from '@theme';
 
 const strOfferSent = "Your offer has been sent! \n\nThe recipient will be notified and if they accept your offer, we will let you know!"
@@ -36,7 +36,9 @@ export default class MakeOffer extends Component {
     }
     
     navigateDialog(){
-        this.props.navigation.navigate("NotificationDialog",{title:strOfferSent,next:"HomeStarter"});
+        //this.props.navigation.navigate("NotificationDialog",{title:strOfferSent,next:"HomeStarter"});
+        this.props.navigation.navigate("Sent", {showAlertMsg: "Offer Sent! Recipient must accept within 48 hours for binding trade agreement. Offers accepted after 48 hours require renewed acceptance from sender.", showAlertHeader: "Sent Offer!"});
+        EventRegister.emit('moveTab', 'Sent');
     }
 
     makeOffer() {
