@@ -112,7 +112,7 @@ export default {
         alignItems: 'center',
         margin:0,
         padding:0,
-        marginTop: 20,
+        marginTop: 0,
         marginBottom: 0,
         padding:0,
     },

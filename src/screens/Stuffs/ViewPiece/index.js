@@ -123,7 +123,7 @@ export default class ViewPiece extends Component {
 
                     </ScrollView>
 
-                    <View style={Styles.makeofferView}>
+                    <View style={(this.props.navigation.state!==undefined&&this.props.navigation.state.params.makeOffer==='no')?Styles.makeofferViewSmall:Styles.makeofferView}>
                             <View style={Styles.descTitle}>
                                 <Text style={{color:Constants.Colors.Orange}} onPress={this.pressUsername.bind(this)}>{this.state.detail.subTitle} 
                                 <Text style={{color:Constants.Colors.DarkGrey}}>{this.state.detail.subTitle2} </Text>
@@ -148,9 +148,12 @@ export default class ViewPiece extends Component {
                                 </TouchableOpacity>
                             </View>
 
-                            <View style={[Styles.offerBtn,CSS.justifyCenter]}>
-                                {(this.props.navigation.state!==undefined&&this.props.navigation.state.params.makeOffer==='no')?null:<Button primary raised text="MAKE OFFER" onPress={this.pressMakeOffer.bind(this)} />}
-                            </View>
+                            
+                                {(this.props.navigation.state!==undefined&&this.props.navigation.state.params.makeOffer==='no')?null:
+                                <View style={[Styles.offerBtn,CSS.justifyCenter]}>
+                                <Button primary raised text="MAKE OFFER" onPress={this.pressMakeOffer.bind(this)} />
+                                </View>}
+                            
                         </View>
                 </View>
             </AppTheme>

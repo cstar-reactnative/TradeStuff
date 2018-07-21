@@ -66,7 +66,6 @@ export default class Sent extends Component {
                     <View style={Styles.contenItemMainGreen}>
                         <Image style={Styles.imageStyle}  source={item.thumbnail} />
                     </View>
-                    <View style={{width:10,height:'100%'}} />
                 </View>
             
                 <View style={Styles.contentIcon}>
@@ -76,7 +75,7 @@ export default class Sent extends Component {
 
             
                 <View style={Styles.contentItemImage}>
-                    <View style={{width:10,height:'100%'}} />
+                    
                     <View style={Styles.contenItemMainYellow}>
                         <Image style={Styles.imageStyle}  source={item.thumbnail} />
                     </View>

@@ -103,9 +103,17 @@ export default {
         flex:1,
         alignItems:'flex-center'
     },
+    
     makeofferView: {
         width:'100%',
         height:150,
+        marginTop:3,
+        backgroundColor:Constants.Colors.MediumGrey,
+        alignItems:'center'
+    },
+    makeofferViewSmall: {
+        width:'100%',
+        height:100,
         marginTop:3,
         backgroundColor:Constants.Colors.MediumGrey,
         alignItems:'center'
