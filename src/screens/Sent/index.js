@@ -6,7 +6,7 @@ import {
     Alert,
     TouchableOpacity
 } from 'react-native';
-
+import IconEntypo from 'react-native-vector-icons/Entypo';
 import {Images} from '@theme';
 import {AppTheme} from '@components';
 import Styles from './styles';
@@ -70,7 +70,7 @@ export default class Sent extends Component {
                 </View>
             </TouchableOpacity> 
                 <View>
-                <Icon style={Styles.imageColor} name="arrow-forward" size={34} />
+                <IconEntypo style={Styles.imageColor} name="arrow-bold-right" size={34} />
                 </View>
             
 
@@ -83,9 +83,7 @@ export default class Sent extends Component {
                 </View>
             </TouchableOpacity>
 
-            <View style={Styles.withdrawStyle}>
-                <Button accent raised style={Styles.withdrawButton} text="CANCEL" onPress={()=>this.pressedWithdraw(index)} />
-            </View>
+            
         </View>
     );
 

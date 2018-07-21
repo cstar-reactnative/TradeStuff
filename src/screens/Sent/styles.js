@@ -11,14 +11,16 @@ export default {
         width:'100%',
         height:'100%',
     },
-
+    imageColor:{
+        color: Colors.greenColor
+    },
     contentItemView:{
         width: '100%',
         padding:20,
         height: 200,
         justifyContent: 'center',
         alignItems:'center',
-        padding:20,
+        padding:30,
         flexDirection:'row'
     },
     contentItemImage:{
