@@ -112,7 +112,7 @@ export default {
         margin:0,
         padding:0,
         marginTop: 0,
-        marginBottom: 30,
+        marginBottom: 0,
         padding:0,
     },
     shareBtn: {
