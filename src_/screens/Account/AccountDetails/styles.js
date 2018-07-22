@@ -93,24 +93,6 @@ export default {
         width:30,
         height:'100%',
         alignItems:'flex-end',
-    },
-    bottomView: {
-        height:50,
-        flexDirection:"row",
-        alignItems:"center",
-    },
-
-    bottomButton:{
-        flexDirection:"row",
-        
-    },
-    button: {
-        justifyContent: 'center',
-        flex: 50,
-        padding: 2,
-        width: 100,
-        borderWidth:2,
-        borderColor:Colors.lightGrayColor,
-    },
+    }
    
 };

@@ -35,7 +35,7 @@ export default class Likes extends Component {
 
     pressItem(index){
 
-        this.props.navigation.navigate("ViewPiece",{index:index});
+        // this.props.navigation.navigate("ViewPiece",{index:index});
     }
     
     renderItem = ({ item, index }) => (

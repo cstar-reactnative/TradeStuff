@@ -35,7 +35,7 @@ export default class Likes extends Component {
 
     pressItem(index){
 
-        // this.props.navigation.navigate("ViewPiece",{index:index});
+        this.props.navigation.navigate("ViewPiece",{index:index});
     }
     
     renderItem = ({ item, index }) => (
@@ -44,6 +44,9 @@ export default class Likes extends Component {
             <View style={Styles.contentItemImage}>
                 <View style={Styles.contenItemMainYellow}>
                      <Image style={Styles.imageStyle}  source={item.thumbnail} />
+                </View>
+                <View style={Styles.favoriteIcon}>
+                    <Icon style={Styles.darkGray} name = "favorite" size={30}/>
                 </View>
                 <View style={Styles.priceIcon}>
                     <Text style={Styles.priceText}>$25</Text>
