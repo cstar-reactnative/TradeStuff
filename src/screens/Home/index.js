@@ -12,7 +12,7 @@ import {TopBar,AppTheme,ScrollItem,ScrollArrow,AppContainer} from '@components';
 import Styles from './styles';
 import { Icon } from 'react-native-elements'
 import {Images} from '@theme';
-
+import GridList from 'react-native-grid-list';
 import Masonry from 'react-native-masonry';
 
 

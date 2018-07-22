@@ -43,15 +43,21 @@ export default {
     },
     addStuffBtn: {
         width: 180,
-        alignItems:'center',
         backgroundColor:'transparent',
-
+        height: 40,
+        flex: 1,
+    },
+    bottomView: {
+        height:50,
+        flexDirection:"row",
+        alignItems:"center",
+       
     },
     radius10Btn:{
         flexDirection:'row',
         backgroundColor:'#79af13',
         width:"100%",
-        borderRadius:25,
+        borderRadius:10,
         height:"100%",
         justifyContent:'center',
         alignItems:'center'
