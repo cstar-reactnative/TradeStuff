@@ -72,27 +72,7 @@ export default class Account extends Component {
                                 onPress={()=>alert("Changes saved successfully")}/>
                             </View>
 
-                            <View style={Styles.dividerLine}/>                                                        
-
-                            {/* <View style={Styles.menuButton}>
-                                <Button raised text = "DEPOSIT" onPress={this.navigateHome.bind(this)}/>
-                            </View>
-                            <View style={Styles.menuButton}>
-                                <Button raised primary text = "WITHDRAW" />
-                            </View> */}
-
-                            {/* <View style={Styles.menuLabel}>
-                                <Text style={Styles.menuLabelText}>UNLOCKED STAKE</Text>
-                            </View>
-                            <View style={Styles.menuLabel}>
-                                <Text style={Styles.menuLabelValue}>$25.00</Text>
-                            </View>
-                            <View style={Styles.menuLabel}>
-                                <Text style={Styles.menuLabelText}>LOCKED STAKE</Text>
-                            </View>
-                            <View style={Styles.menuLabel}>
-                                <Text style={Styles.menuLabelValue}>$999.00</Text>
-                            </View> */}
+                            <View style={Styles.dividerLine}/>    
                         </View>
                         
                         <View style={Styles.detailView}>

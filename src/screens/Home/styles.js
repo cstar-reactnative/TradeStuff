@@ -29,23 +29,17 @@ export default {
         height: '100%',
         justifyContent: 'center',
         alignItems:'center',
-        padding:20,        
+        padding:5,
+
     },
     contentItemImage:{
         width: '100%',
         height: '100%',
         borderRadius: 10,
         backgroundColor:Colors.whiteColor,
-    },
-    bottomView: {
-        position:'absolute',
-        width:'100%',
-        bottom:0,
-        height:50,
-        alignItems:"center",
-        padding:5,
-        backgroundColor:'transparent',
-        justifyContent:'center'
+        borderColor:Colors.orangeColor,      
+        borderWidth:3,
+        borderRadius:5
     },
     addStuffBtn: {
         width: 180,

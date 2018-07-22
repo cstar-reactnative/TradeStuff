@@ -106,14 +106,20 @@ export default class AccountDetails extends Component {
                         </View>
                     </View>
                     <View style={styles.imgsView}>
-                        <Wants/>
+                        {this.state.toggleBtn===true?<Wants/>:<Likes/>}
                     </View>
                     <TouchableOpacity style={styles.absoluteView} onPress={() => this.props.navigation.navigate('Account')}>
                         <Icon name="edit" color={Constants.Colors.Green} size={25} />
                     </TouchableOpacity>
-                    <View style={styles.absoluteButtons}>
-                        <Button title='MY STUFF' style={Styles.radius10Btn} color='white' onPress={() => alert("pressed")} />
-                        <Button title='MY LIKES' style={Styles.radius10Btn} color='white' onPress={() => alert("pressed")} />
+                    <View style={Styles.bottomView}>
+                        <View style={Styles.bottomButton}>
+                            <View style={Styles.button}>
+                                <Button color={Constants.Colors.Green} title="MY STUFF" onPress={() =>  this.setState({toggleBtn: true})} />
+                            </View>
+                            <View style={Styles.button}>
+                                <Button color={Constants.Colors.Orange} title="MY LIKE" onPress={() =>  this.setState({toggleBtn: false})} />
+                            </View>
+                        </View>
                     </View>
                 </AppTheme>
             </View>

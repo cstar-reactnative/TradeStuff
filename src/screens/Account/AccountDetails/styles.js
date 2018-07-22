@@ -93,6 +93,22 @@ export default {
         width:30,
         height:'100%',
         alignItems:'flex-end',
-    }
+    },
+    bottomView: {
+        height:50,
+        flexDirection:"row",
+        alignItems:"center",
+        marginLeft:20,
+        marginRight:20
+    },
+
+    bottomButton:{
+        flexDirection:"row",
+        flex:1,
+    },
+    button: {
+        flex: 1,
+        padding: 3
+    },
    
 };
