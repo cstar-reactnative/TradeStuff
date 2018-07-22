@@ -5,12 +5,14 @@ export default {
     container: {
         flex: 1, 
     },
+    
     accountView: {
         flex:1,
         width:'100%',
         height:'100%',
         flexDirection:'row',
     },
+
     menuView: {
         width:160,
         height:'100%',
