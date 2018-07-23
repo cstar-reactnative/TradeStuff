@@ -29,17 +29,17 @@ export default {
         padding: 15, 
         margin:15,
         marginTop:20,
-        paddingLeft: 47,
-        paddingRight: 47
-    },
+        paddingLeft: 20,
+        paddingRight: 20
+        },
     receivedMark:{
         backgroundColor: Colors.whiteColor,
         color: Colors.orangeColor,
         padding: 15,
         margin:15,
         marginTop:20,
-        paddingLeft: 22,
-        paddingRight: 22
+        paddingLeft: 20,
+        paddingRight: 20
     },
     detailView:{
         marginTop:10,
