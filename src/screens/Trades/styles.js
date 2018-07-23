@@ -11,7 +11,12 @@ export default {
         width:'100%',
         height:'100%'
     },
-
+    imageColor1:{
+        color: Colors.orangeColor
+    },
+    imageColor2:{
+        color: Colors.greenColor
+    },
     contentItemView:{
         width: '100%',
         padding:20,

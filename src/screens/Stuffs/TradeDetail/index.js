@@ -98,7 +98,7 @@ export default class TradeDetail extends Component {
                         <Text style={[CSS.font16,CSS.darkGray]} >Trade Details</Text>
                         <Text style={[CSS.font16,CSS.darkGray]} >Offer Sent: June 25, 2018 6:25PM</Text>
                         <Text style={[CSS.font16,CSS.darkGray]} >Offer Accepted: June 26, 2018 5:15PM</Text>
-                        <View style={{flexDirection:'row'}}>
+                        <View style={{flexDirection:'row', padding: 10}}>
                         <TouchableOpacity onPress={this.pressSent.bind(this)}>
                             <Text style={Styles.sentMark}>MARK "SENT" </Text>                            
                         </TouchableOpacity>

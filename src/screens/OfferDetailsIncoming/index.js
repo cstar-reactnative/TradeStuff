@@ -56,6 +56,7 @@ export default class OfferDetailsIncoming extends Component {
             'Are you sure you want to accept this offer? Trade agreements are binding.',
             [
               {text: 'Yes', onPress: () => {
+                Alert.alert('Tradestuff','Congratulations! Trade has been mutually accepted. Please ship your item to the address provided.')
                 this.props.navigation.navigate("AcceptedTrade");
                 EventRegister.emit('moveTab', 'Accept');
                 }

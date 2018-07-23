@@ -6,7 +6,7 @@ import {
     Alert,
     TouchableOpacity
 } from 'react-native';
-
+import IconEntypo from 'react-native-vector-icons/Entypo';
 import {Images} from '@theme';
 import {AppTheme} from '@components';
 import Styles from './styles';
@@ -76,7 +76,8 @@ export default class Trades extends Component {
                 <View style={{width:10,height:'100%'}} />
             </View>
             <View>
-            <Icon style={Styles.imageColor} name="import-export" size={34} />
+            <IconEntypo style={Styles.imageColor2} name="arrow-bold-right" size={34} />
+            <IconEntypo style={Styles.imageColor1} name="arrow-bold-left" size={34} />
             </View>
             <View style={Styles.contentItemImage}>
                 <View style={{width:10,height:'100%'}} />
