@@ -8,11 +8,12 @@ export default {
         flex: 1, 
     },
     headerScroll: {
+        flexDirection: 'row',
         height: 80,
         backgroundColor:Colors.verylightGrayColor
     },
     headerScrollView: {
-        width: '100%',
+        flex: 1,
         height: '100%',
         padding: 1,
         backgroundColor:Colors.verylightGrayColor
@@ -52,7 +53,7 @@ export default {
         justifyContent:'center'
     },
     addStuffBtn: {
-        width: 180,
+        width: 150,
         alignItems:'center',
         backgroundColor:'transparent',
 
@@ -67,16 +68,19 @@ export default {
         alignItems:'center'
     },
     scrollArrowLeft:{
-        position:'absolute',
         width:30,
         height:'100%',
+        marginRight: 10,
     },
     scrollArrowRight:{
-        position:'absolute',
-        right:0,
         width:30,
         height:'100%',
-        alignItems:'flex-end',
+        marginLeft: 10,
+        marginRight: 5,
+    },
+    arrow: {
+        width: 75,
+        height: 75,
     },
     imageContainer:{
         borderColor:Colors.orange,

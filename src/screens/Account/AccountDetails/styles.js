@@ -8,10 +8,22 @@ export default {
         margin: 3
     },
     imgView:{
-        backgroundColor: Constants.Colors.White
+        backgroundColor: Constants.Colors.White,
+       borderColor: Constants.Colors.LightGrey,
+       borderWidth: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 7,
+        width: 70,
+        height: 70,
+        position: 'relative',
+        zIndex: 1,
+        left: 10,
+        top: 5,
+       
     },
     imgsView:{
-        flex: 1
+        flex: 1,
     },
     secondSubView: {
         flexDirection: 'row',
@@ -19,7 +31,7 @@ export default {
         flex: 1,
     },
     firstContainer:{
-        backgroundColor: Constants.Colors.VeryLightGrey,
+        backgroundColor: Constants.Colors.LightGrey,
         borderColor: Constants.Colors.Green,
         borderWidth: 1,
         flexDirection: 'row'
@@ -38,6 +50,12 @@ export default {
     userImg:{
         width: 100,
         height: 100
+    },
+    userPic: {
+       justifyContent: 'center',
+       width: 70,
+       height: 70,
+       marginLeft: 15,
     },
     absoluteView:{
         position: 'absolute',
@@ -75,12 +93,16 @@ export default {
         height:'100%',
         color: 'red'
     },
-
+    headerScroll:{
+        justifyContent: 'center'
+    },
     headerScrollView: {
         width: '100%',
         height: '100%',
-        padding: 1,
-        backgroundColor:Colors.verylightGrayColor
+        paddingRight: 10,
+        right:25,
+        backgroundColor:Colors.Green,
+        borderRadius:2,
     },
     scrollArrowLeft:{
         position:'absolute',
@@ -98,19 +120,21 @@ export default {
         height:50,
         flexDirection:"row",
         alignItems:"center",
+        backgroundColor: "#e2e2e2"
     },
 
     bottomButton:{
         flexDirection:"row",
-        
+        flex:1,
+       justifyContent: 'center',
     },
     button: {
-        justifyContent: 'center',
         flex: 50,
-        padding: 2,
-        width: 100,
-        borderWidth:2,
-        borderColor:Colors.lightGrayColor,
+        width: 150,
+        backgroundColor: 'white',
+        borderColor: '#e2e2e2',
+        borderWidth: 6,
+        borderRadius: 5
     },
    
 };

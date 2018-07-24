@@ -9,9 +9,10 @@ import {
 
 import { EventRegister } from 'react-native-event-listeners'
 
-//import {Colors} from '@theme';
+import {Colors} from '@theme';
 import {AppTheme} from '@components';
 import { COLOR,ThemeProvider, BottomNavigation,Toolbar ,Icon, Searchable} from 'react-native-material-ui';
+import Constants from '../../constants';
 
 
 export default class BottomBar extends Component {
@@ -52,31 +53,40 @@ export default class BottomBar extends Component {
     render() {
         return (
             <AppTheme >
-                <BottomNavigation active={this.state.active} hidden={false}>
+                <BottomNavigation 
+                    Cont
+                    active={this.state.active}  style={{ container: { backgroundColor: '#d4d4d4' } }} hidden={false}>
                     <BottomNavigation.Action
                         key="HomeTab"
                         icon="home"
                         onPress={() => this.navigateFunc("HomeTab") }
+                        style={{ container: { minWidth: null } }}
+                       
                     />
                     <BottomNavigation.Action
                         key="SentOrdersTab"
                         icon="navigation"
                         onPress={() => this.navigateFunc("SentOrdersTab")}
+                        containerStyle={{backgroundColor: 'red'}}
+                        style={{ container: { minWidth: null } }}
                     />
                     <BottomNavigation.Action
                         key="IncomingOrdersTab"
                         icon="details"
                         onPress={() => this.navigateFunc("IncomingOrdersTab")}
+                        style={{ container: { minWidth: null }, backgroundColor: 'red' }}
                     />
                     <BottomNavigation.Action
                         key="TradesTab"
                         icon="list"
                         onPress={() => this.navigateFunc("TradesTab")}
+                        style={{ container: { minWidth: null } }}
                     />
                     <BottomNavigation.Action
                         key="AccountTab"
                         icon="account-box"
                         onPress={() => this.navigateFunc("AccountTab")}
+                        style={{ container: { minWidth: null } }}
                     />
                 </BottomNavigation>
             </AppTheme>

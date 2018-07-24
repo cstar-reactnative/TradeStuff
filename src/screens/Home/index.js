@@ -37,8 +37,11 @@ export default class Home extends Component {
                 { thumbnail: Images.img_5 },
                 { thumbnail: Images.img_2 },
               ],
-            listType:0 // 0:Available, 1:Traded
-
+            listType:0, // 0:Available, 1:Traded
+          images: [
+            require('../../../assets/images/icons/left-arrow.png'),
+            require('../../../assets/images/icons/right-arrow.png'),
+          ]   
         });
         this.onPressAddStuff = this.onPressAddStuff.bind(this)
     }
@@ -91,20 +94,18 @@ export default class Home extends Component {
                     <TopBar navigation = {this.props.navigation} onFilterPressed={this.filterPressed.bind(this)} onSharePressed={this.sharePressed.bind(this)}/>
                     
                     <View style={Styles.headerScroll}>
+                        <View style={Styles.scrollArrowLeft}>
+                            <ScrollArrow style={Styles.arrow} source={require('../../../assets/images/icons/left-arrow.png')} onTouch={this.onPressScrollLeftArrow.bind(this)}/>
+                        </View>
                         <ScrollView ref="categoryScroll" style={Styles.headerScrollView} horizontal={true} showsHorizontalScrollIndicator={false}>
-                            
                             <ScrollItem itemImage="computer" itemName="Tech" index="Tech" onTouch={this.onPressScrollItem}/>
                             <ScrollItem itemImage="image" itemName="Clothing" index="Clothing" onTouch={this.onPressScrollItem}/>
                             <ScrollItem itemImage="accessibility" itemName="Sports" index="Sports" onTouch={this.onPressScrollItem}/>
                             <ScrollItem itemImage="library-books" itemName="Books" index="Books" onTouch={this.onPressScrollItem}/>
                             <ScrollItem itemImage="music-video" itemName="Music" index="Music" onTouch={this.onPressScrollItem}/>
-                            
                         </ScrollView>
-                        <View style={Styles.scrollArrowLeft}>
-                            <ScrollArrow itemImage="arrow-back" onTouch={this.onPressScrollLeftArrow.bind(this)}/>
-                        </View>
                         <View style={Styles.scrollArrowRight}>
-                            <ScrollArrow itemImage="arrow-forward" onTouch={this.onPressScrollRightArrow.bind(this)}/>
+                            <ScrollArrow style={Styles.arrow} source={require('../../../assets/images/icons/right-arrow.png')} onTouch={this.onPressScrollRightArrow.bind(this)}/>                        
                         </View>
                     </View>
                     
@@ -121,7 +122,7 @@ export default class Home extends Component {
                     <View style={Styles.bottomView}>
                         <View style={Styles.addStuffBtn}>
                             <TouchableOpacity style={Styles.radius10Btn} onPress={this.onPressAddStuff}>
-                                <Icon
+                                <Icon                    
                                     type='feather'
                                     color='white'
                                     size={20}

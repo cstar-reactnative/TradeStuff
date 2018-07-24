@@ -76,7 +76,7 @@ export default class AccountDetails extends Component {
                 <AppTheme >
                     <View style={styles.firstContainer}>
                         <View style={styles.imgView}>
-                            <Icon name="user" color={Constants.Colors.LightGrey} size={65} />
+                            <Icon style={styles.userPic} name="user" color={Constants.Colors.LightGrey} size={75} />
                             {/* <Image source={Constants.Images.user.defaultUser} style={styles.userImg}/> */}
                         </View>
                         <View style={styles.textSubView}>
@@ -85,22 +85,20 @@ export default class AccountDetails extends Component {
                                 <Text style={styles.AddressText}>{"    address LA"}</Text>
                             </View>
                             <Text style={{flex: 1,fontSize: 10}}>Wants</Text>
-                            <View style={{width: '100%', flex: 3, paddingLeft : 10, paddingRight: 10}}>
+                            <View style={{width: '100%', flex: 3, position:'relative', zIndex:0 }}>
                                 <View style={Styles.headerScroll}>
                                     <ScrollView ref="categoryScroll" style={Styles.headerScrollView} horizontal={true} showsHorizontalScrollIndicator={false}>
-                                        
-                                        <ScrollSmallItem itemImage="computer" itemName="Tech" index="Tech" onTouch={this.onPressScrollItem}/>
+                                        <ScrollSmallItem imageColor="#e2e2e2" itemImage="computer" itemName="Tech" index="Tech" onTouch={this.onPressScrollItem}/>
                                         <ScrollSmallItem itemImage="image" itemName="Clothing" index="Clothing" onTouch={this.onPressScrollItem}/>
                                         <ScrollSmallItem itemImage="accessibility" itemName="Sports" index="Sports" onTouch={this.onPressScrollItem}/>
                                         <ScrollSmallItem itemImage="library-books" itemName="Books" index="Books" onTouch={this.onPressScrollItem}/>
                                         <ScrollSmallItem itemImage="music-video" itemName="Music" index="Music" onTouch={this.onPressScrollItem}/>
-                                        
                                     </ScrollView>
                                     <View style={Styles.scrollArrowLeft}>
-                                        <ScrollSmallArrow itemImage="arrow-back" onTouch={this.onPressScrollLeftArrow.bind(this)}/>
+                                        <ScrollSmallArrow style={Styles.arrow} source={require('../../../../assets/images/icons/sort-left.png')}  onTouch={this.onPressScrollLeftArrow.bind(this)}/>
                                     </View>
                                     <View style={Styles.scrollArrowRight}>
-                                        <ScrollSmallArrow itemImage="arrow-forward" onTouch={this.onPressScrollRightArrow.bind(this)}/>
+                                        <ScrollSmallArrow style={Styles.arrow} source={require('../../../../assets/images/icons/sort-right.png')}  onTouch={this.onPressScrollRightArrow.bind(this)}/>
                                     </View>
                                 </View>
                             </View>
@@ -115,10 +113,10 @@ export default class AccountDetails extends Component {
                     <View style={Styles.bottomView}>
                         <View style={Styles.bottomButton}>
                             <View style={Styles.button}>
-                                <Button color={Constants.Colors.Green} title="MY STUFF" onPress={() =>  this.setState({toggleBtn: true})} />
+                                    <Button color={Constants.Colors.Green} title="MY STUFF" onPress={() =>  this.setState({toggleBtn: true})} />
                             </View>
                             <View style={Styles.button}>
-                                <Button color={Constants.Colors.Orange} title="MY LIKE" onPress={() =>  this.setState({toggleBtn: false})} />
+                                    <Button color={Constants.Colors.Orange} title="MY LIKE" onPress={() =>  this.setState({toggleBtn: false})} />
                             </View>
                         </View>
                     </View>
