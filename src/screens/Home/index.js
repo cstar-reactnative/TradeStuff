@@ -128,7 +128,7 @@ export default class Home extends Component {
                                     size={20}
                                     name='camera'
                                 />
-                                <Text style={{fontSize:20, color:'white', marginLeft:10}}>ADD STUFF</Text>
+                                <Text style={{fontSize:16, color:'white', marginLeft:10}}>ADD STUFF</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
