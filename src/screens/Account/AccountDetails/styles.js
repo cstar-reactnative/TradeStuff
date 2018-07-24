@@ -9,8 +9,8 @@ export default {
     },
     imgView:{
         backgroundColor: Constants.Colors.White,
-       borderColor: Constants.Colors.LightGrey,
-       borderWidth: 1,
+        borderColor: Constants.Colors.MediumGrey,
+        borderWidth: 1,
         justifyContent: 'center',
         alignItems: 'center',
         margin: 7,
@@ -18,8 +18,8 @@ export default {
         height: 70,
         position: 'relative',
         zIndex: 1,
-        left: 10,
-        top: 5,
+        left: 0,
+        top: 0,
        
     },
     imgsView:{
@@ -38,13 +38,14 @@ export default {
     },
     nameText:{
         color: Constants.Colors.Green,
-        fontSize: 10
+        fontSize: 14
     },
     AddressText:{
-        fontSize: 10
+        fontSize: 12
     },
     textSubView:{
         flex: 1,
+        justifyContent: 'center',
         alignItems: 'center',
     },
     userImg:{
@@ -94,13 +95,16 @@ export default {
         color: 'red'
     },
     headerScroll:{
-        justifyContent: 'center'
+        justifyContent: 'center',
+        overflow: 'hidden',
+        zIndex: 1,
     },
     headerScrollView: {
+        overflow: 'hidden',
         width: '100%',
         height: '100%',
         paddingRight: 10,
-        right:25,
+        right:27,
         backgroundColor:Colors.Green,
         borderRadius:2,
     },
@@ -134,7 +138,9 @@ export default {
         backgroundColor: 'white',
         borderColor: '#e2e2e2',
         borderWidth: 6,
-        borderRadius: 5
+        borderRadius: 5,
+        marginLeft: 5,
+        marginRight: 5
     },
    
 };

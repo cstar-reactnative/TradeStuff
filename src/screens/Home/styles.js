@@ -62,7 +62,7 @@ export default {
         flexDirection:'row',
         backgroundColor:'#79af13',
         width:"100%",
-        borderRadius:25,
+        borderRadius:8,
         height:"100%",
         justifyContent:'center',
         alignItems:'center'

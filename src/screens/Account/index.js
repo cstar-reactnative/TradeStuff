@@ -15,6 +15,7 @@ import { Header } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Constants from '../../constants';
 import { Button, Avatar } from 'react-native-material-ui';
+import { ImagePicker } from 'react-native-image-picker';
 import { EventRegister } from 'react-native-event-listeners'
 
 export default class Account extends Component {
@@ -37,7 +38,36 @@ export default class Account extends Component {
     navigateHome(){
         
     }
+    openImagePicker() {
+        var ImagePicker = require('react-native-image-picker');
+        const options = {
+            quality: 1.0,
+            maxWidth: 500,
+            maxHeight: 500,
+                storageOptions: {
+                skipBackup: true
+            }
+        };
+        let arrImg = []; 
+        ImagePicker.showImagePicker(options, response => {
+        console.log("Response = ", response);
 
+        if (response.didCancel) {
+            console.log("User cancelled photo picker");
+        }
+        else if (response.error) {
+            console.log("ImagePicker Error: ", response.error);
+        }
+        else if (response.customButton) {
+        }
+        else {
+            let source = { uri: response.uri , fileName: response.fileName, type: response.type};
+
+                this.setState({avatarSource: source})
+
+            }
+        });
+    }
     render() {
         return (
             <AppTheme >
@@ -58,7 +88,7 @@ export default class Account extends Component {
                             </View>
 
                             <View style={Styles.menuButton}>
-                                <Button raised text = "CHANGE" />
+                                <Button raised text = "CHANGE" onPress={() => this.openImagePicker()}/>
                             </View>
 
                             <View style={Styles.dividerLine}/>                                                        

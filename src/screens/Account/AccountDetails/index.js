@@ -76,13 +76,15 @@ export default class AccountDetails extends Component {
                 <AppTheme >
                     <View style={styles.firstContainer}>
                         <View style={styles.imgView}>
+                            
                             <Icon style={styles.userPic} name="user" color={Constants.Colors.LightGrey} size={75} />
                             {/* <Image source={Constants.Images.user.defaultUser} style={styles.userImg}/> */}
                         </View>
+                        <View style={styles.trick} />
                         <View style={styles.textSubView}>
                             <View style={styles.secondSubView}>
                                 <Text style={styles.nameText}>{"John  Doe   -"}</Text>
-                                <Text style={styles.AddressText}>{"    address LA"}</Text>
+                                <Text style={styles.AddressText}>{"Los Angeles, CA"}</Text>
                             </View>
                             <Text style={{flex: 1,fontSize: 10}}>Wants</Text>
                             <View style={{width: '100%', flex: 3, position:'relative', zIndex:0 }}>
