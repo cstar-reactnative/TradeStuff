@@ -62,10 +62,12 @@ export default class BottomBar extends Component {
     render() {
         return (
             <AppTheme >
-                <BottomNavigation active={this.state.active} hidden={false}>
+                <BottomNavigation /*active={this.state.active}*/ hidden={false}>
                     <BottomNavigation.Action
                         key="HomeTab"
-                        icon={<Icon name='home' size={35}/>}
+                        icon={<View> 
+                            <Icon name='home' color={this.state.active==="HomeTab"?'#f79a0e':'grey'} size={35}/> 
+                            </View>}
                         onPress={() => this.navigateFunc("HomeTab") }
                     />
                     <BottomNavigation.Action
