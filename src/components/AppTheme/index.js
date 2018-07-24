@@ -49,7 +49,7 @@ export class AppContainer extends Component {
     render() {
         return (
             <ThemeProvider uiTheme={uiTheme}>
-                <View style={{flex:1,width:'100%',height:'100%',paddingTop:0,backgroundColor:statusBarColor}}>
+                <View style={{flex:1,width:'100%',height:'100%',paddingTop:0,backgroundColor:Colors.statusBarColor}}>
                     {this.props.children}
                 </View>
             </ThemeProvider>

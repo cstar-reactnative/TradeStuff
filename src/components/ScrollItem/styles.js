@@ -1,12 +1,13 @@
 import {Colors} from '@theme';
 export default {
     touchArea: {
-        flex:1
+        flex:1,
     },
     headerScrollItem: {
-        width:100,
+        width:70,
         height:'100%',
-        backgroundColor:Colors.darkGrayColor
+        backgroundColor:Colors.GrayColor,
+
     },
     headerScrollItemIcon: {
         height: '60%',
@@ -20,12 +21,32 @@ export default {
         justifyContent: 'center',
         alignItems:'center',
     },
+    headerScrollSmallItem: { 
+        flex: 1,
+        marginLeft: 55
+    },
+    headerScrollSmallItemIcon: {
+        height: '65%',
+        width: '100%',
+        alignItems:'center',
+        justifyContent: 'flex-end',
+    },
+    headerScrollSmallItemLabel: {
+        height: '35%',
+        width: '100%',
+        justifyContent: 'center',
+        alignItems:'center',
+    },
     labelColor: {
-        color:Colors.whiteColor,
+        color:Colors.DarkGray,
         fontSize: 15
     },
+    SmalllabelColor: {
+        color:Colors.DarkGray,
+        fontSize: 10
+    },
     imageColor: {
-        color:Colors.whiteColor
+        color:Colors.lightDarkGray
     },
     headerScrollArrow: {
         height:'100%',
@@ -34,8 +55,14 @@ export default {
     headerScrollArrowIcon: {
         height: '100%',
         width: '100%',
-        backgroundColor:Colors.darkGrayColor,
-        alignItems:'center',
+        backgroundColor:Colors.GrayColor,
         justifyContent: 'center',
+        padding: 5,
     },
+    arrowIcon: {
+        width: 75,
+        height: 75,
+        flex: 1,
+        justifyContent: 'center'
+    }
 }

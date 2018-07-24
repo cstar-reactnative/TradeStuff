@@ -16,11 +16,10 @@ export default {
 
     contentItemView:{
         width: '100%',
-        padding:20,
-        height: 200,
+        padding:10,
+        height: 190,
         justifyContent: 'center',
         alignItems:'center',
-        padding:20,
         flexDirection:'row'
     },
     contentItemImage:{
@@ -45,9 +44,28 @@ export default {
 
     favoriteIcon:{
         position:'absolute',
-        top:3,left:0,
-        width:'100%',
+        top:3,
+        left:6,
+        width:30,
         height:30,
         alignItems:'center',
+    },
+
+    darkGray: {
+        color: Colors.orangeColor
+    },
+
+    priceIcon: {
+        position:'absolute',
+        top:6,
+        right:6,
+        width:30,
+        height:20,
+        alignItems:'center',
+        backgroundColor: Colors.orangeColor
+    },
+
+    priceText: {
+        color: 'white'
     }
 };

@@ -8,14 +8,15 @@ export default {
         flex: 1, 
     },
     headerScroll: {
+        flexDirection: 'row',
         height: 80,
-        backgroundColor:Colors.darkGrayColor
+        backgroundColor:Colors.verylightGrayColor
     },
     headerScrollView: {
-        width: '100%',
+        flex: 1,
         height: '100%',
         padding: 1,
-        backgroundColor:Colors.darkGrayColor
+        backgroundColor:Colors.verylightGrayColor
     },
 
     contentList: {
@@ -29,14 +30,17 @@ export default {
         height: '100%',
         justifyContent: 'center',
         alignItems:'center',
-        padding:20,
-        
+        padding:5,
+
     },
     contentItemImage:{
         width: '100%',
         height: '100%',
         borderRadius: 10,
         backgroundColor:Colors.whiteColor,
+        borderColor:Colors.orangeColor,      
+        borderWidth:3,
+        borderRadius:5
     },
     bottomView: {
         position:'absolute',
@@ -49,23 +53,37 @@ export default {
         justifyContent:'center'
     },
     addStuffBtn: {
-        width: 200,
+        width: 150,
         alignItems:'center',
-        backgroundColor:'transparent'
+        backgroundColor:'transparent',
+
     },
     radius10Btn:{
-        width:'100%',borderRadius:5,height:'100%'
+        flexDirection:'row',
+        backgroundColor:'#79af13',
+        width:"100%",
+        borderRadius:25,
+        height:"100%",
+        justifyContent:'center',
+        alignItems:'center'
     },
     scrollArrowLeft:{
-        position:'absolute',
         width:30,
         height:'100%',
+        marginRight: 10,
     },
     scrollArrowRight:{
-        position:'absolute',
-        right:0,
         width:30,
         height:'100%',
-        alignItems:'flex-end',
-    }
+        marginLeft: 10,
+        marginRight: 5,
+    },
+    arrow: {
+        width: 75,
+        height: 75,
+    },
+    imageContainer:{
+        borderColor:Colors.orange,
+        borderWidth:2,
+        borderRadius:8}
 };

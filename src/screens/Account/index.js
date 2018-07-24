@@ -14,7 +14,7 @@ import Styles from './styles';
 import { Header } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Constants from '../../constants';
-import { Button,Avatar } from 'react-native-material-ui';
+import { Button, Avatar } from 'react-native-material-ui';
 import { EventRegister } from 'react-native-event-listeners'
 
 export default class Account extends Component {
@@ -69,7 +69,7 @@ export default class Account extends Component {
                             <View style={Styles.menuButton}>
                                 <Button raised text = "SAVE" 
                                 // onPress={()=>this.props.navigation.navigate("Likes")}
-                                onPress={()=>alert("Saved")}/>
+                                onPress={()=>alert("Changes saved successfully")}/>
                             </View>
 
                             <View style={Styles.dividerLine}/>                                                        
