@@ -4,7 +4,7 @@ import {
     Text,
     TextInput,
     TouchableOpacity,
-    
+    Image,
 } from 'react-native';
 
 import { EventRegister } from 'react-native-event-listeners'
@@ -70,22 +70,31 @@ export default class BottomBar extends Component {
                     />
                     <BottomNavigation.Action
                         key="SentOrdersTab"
-                        icon="navigation"
+                        icon={<View > 
+                            <Image source={this.state.active==='SentOrdersTab'?require('./sent-offers.png'):require('./sent-offers-grey.png')} style={{width: 35, height: 35}} />
+                            </View>} 
                         onPress={() => this.navigateFunc("SentOrdersTab")}
+                    
                     />
                     <BottomNavigation.Action
                         key="IncomingOrdersTab"
-                        icon="details"
+                        icon={<View > 
+                        <Image source={this.state.active==='IncomingOrdersTab'?require('./received-offers.png'):require('./received-offers-grey.png')} style={{width: 35, height: 35}} />
+                        </View>}
                         onPress={() => this.navigateFunc("IncomingOrdersTab")}
                     />
                     <BottomNavigation.Action
                         key="TradesTab"
-                        icon="list"
+                        icon={<View > 
+                            <Image source={this.state.active==='TradesTab'?require('./traded-stuff.png'):require('./traded-stuff-grey.png')} style={{width: 35, height: 35}} />
+                            </View>}
                         onPress={() => this.navigateFunc("TradesTab")}
                     />
                     <BottomNavigation.Action
                         key="AccountTab"
-                        icon="account-box"
+                        icon={<View > 
+                            <Image source={this.state.active==='AccountTab'?require('./user.png'):require('./user-grey.png')} style={{width: 35, height: 35}} />
+                            </View>}
                         onPress={() => this.navigateFunc("AccountTab")}
                     />
                 </BottomNavigation>
