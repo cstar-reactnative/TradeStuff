@@ -65,13 +65,13 @@ export default class BottomBar extends Component {
                 <BottomNavigation active={this.state.active} hidden={false}>
                     <BottomNavigation.Action
                         key="HomeTab"
-                        icon="home"
+                        icon={<Icon name='home' size={35}/>}
                         onPress={() => this.navigateFunc("HomeTab") }
                     />
                     <BottomNavigation.Action
                         key="SentOrdersTab"
                         icon={<View > 
-                            <Image source={this.state.active==='SentOrdersTab'?require('./sent-offers.png'):require('./sent-offers-grey.png')} style={{width: 23, height: 23}} />
+                            <Image source={this.state.active==='SentOrdersTab'?require('./sent-offers.png'):require('./sent-offers-grey.png')} style={{width: 35, height: 35}} />
                             </View>} 
                         onPress={() => this.navigateFunc("SentOrdersTab")}
                     
@@ -79,21 +79,21 @@ export default class BottomBar extends Component {
                     <BottomNavigation.Action
                         key="IncomingOrdersTab"
                         icon={<View > 
-                        <Image source={this.state.active==='IncomingOrdersTab'?require('./received-offers.png'):require('./received-offers-grey.png')} style={{width: 23, height: 23}} />
+                        <Image source={this.state.active==='IncomingOrdersTab'?require('./received-offers.png'):require('./received-offers-grey.png')} style={{width: 35, height: 35}} />
                         </View>}
                         onPress={() => this.navigateFunc("IncomingOrdersTab")}
                     />
                     <BottomNavigation.Action
                         key="TradesTab"
                         icon={<View > 
-                            <Image source={this.state.active==='TradesTab'?require('./traded-stuff.png'):require('./traded-stuff-grey.png')} style={{width: 23, height: 23}} />
+                            <Image source={this.state.active==='TradesTab'?require('./traded-stuff.png'):require('./traded-stuff-grey.png')} style={{width: 35, height: 35}} />
                             </View>}
                         onPress={() => this.navigateFunc("TradesTab")}
                     />
                     <BottomNavigation.Action
                         key="AccountTab"
                         icon={<View > 
-                            <Image source={this.state.active==='AccountTab'?require('./user.png'):require('./user-grey.png')} style={{width: 23, height: 23}} />
+                            <Image source={this.state.active==='AccountTab'?require('./user.png'):require('./user-grey.png')} style={{width: 35, height: 35}} />
                             </View>}
                         onPress={() => this.navigateFunc("AccountTab")}
                     />
