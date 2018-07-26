@@ -30,12 +30,10 @@ const uiTheme = {
 
 export default class AppTheme extends Component {
   render() {
-    return this.props.children;
-    // return (
-    //   <ThemeProvider uiTheme={uiTheme}>
-    //      <View>{this.props.children}</View>
-    //   </ThemeProvider>
-    // );
+    // return this.props.children;
+    return (
+      <ThemeProvider uiTheme={uiTheme}>{this.props.children}</ThemeProvider>
+    );
   }
 }
 
@@ -52,19 +50,19 @@ export class AppContainer extends Component {
 
   render() {
     return (
-      //   <ThemeProvider uiTheme={uiTheme}>
-      <View
-        style={{
-          flex: 1,
-          width: '100%',
-          height: '100%',
-          paddingTop: 0,
-          backgroundColor: Colors.statusBarColor,
-        }}
-      >
-        {this.props.children}
-      </View>
-      //   </ThemeProvider>
+      <ThemeProvider uiTheme={uiTheme}>
+        <View
+          style={{
+            flex: 1,
+            width: '100%',
+            height: '100%',
+            paddingTop: 0,
+            backgroundColor: Colors.statusBarColor,
+          }}
+        >
+          {this.props.children}
+        </View>
+      </ThemeProvider>
     );
   }
 }
