@@ -22,12 +22,18 @@ export default class ViewPiece extends Component {
         this.state = ({
             listItems: [
 //                { thumbnail: { uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' } },
-                { thumbnail: Images.img_1 },
-                { thumbnail: Images.img_2 },
-                { thumbnail: Images.img_3 },
-                { thumbnail: Images.img_4 },
-                { thumbnail: Images.img_5 },
-                { thumbnail: Images.img_2 },
+                    { thumbnail: Images.img_1, id: 1 },
+                    { thumbnail: Images.img_2, id: 2 },
+                    { thumbnail: Images.img_3, id: 3, myItem: true },
+                    { thumbnail: Images.img_4, id: 4 },
+                    { thumbnail: Images.img_5, id: 5 },
+                    { thumbnail: Images.img_2, id: 6 },
+                    { thumbnail: Images.img_1, id: 7 , myItem: true},
+                    { thumbnail: Images.img_2, id: 7 },
+                    { thumbnail: Images.img_3, id: 9 },
+                    { thumbnail: Images.img_4, id: 10, myItem: true },
+                    { thumbnail: Images.img_5, id: 11 },
+                    { thumbnail: Images.img_2, id: 12, myItem: true },
               ],
             selectedIndex: this.props.navigation.getParam('index'),
             detail: {
@@ -103,9 +109,9 @@ export default class ViewPiece extends Component {
                             <View style={Styles.descTitle}>
                                 <View style={{flexDirection:'row'}}>
                                     <Text style={Styles.titleFont}>{this.state.detail.title}</Text>
-                                    <TouchableOpacity onPress={()=>this.props.navigation.navigate('EditStuff')} style={{flex:1,alignItems:'flex-end'}}>
+                                    {this.state.listItems[this.state.selectedIndex].myItem ? <TouchableOpacity onPress={()=>this.props.navigation.navigate('EditStuff')} style={{flex:1,alignItems:'flex-end'}}>
                                         <IconFontAwesome name='edit' color={Constants.Colors.Green} size={32} />
-                                    </TouchableOpacity>
+                                    </TouchableOpacity>: null}
                                 </View>
                             </View>
                             <View  style={Styles.carouselTitleView}>

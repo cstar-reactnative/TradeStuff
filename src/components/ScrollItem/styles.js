@@ -7,7 +7,6 @@ export default {
         width:70,
         height:'100%',
         backgroundColor:Colors.GrayColor,
-
     },
     headerScrollItemIcon: {
         height: '60%',
@@ -41,12 +40,19 @@ export default {
         color:Colors.DarkGray,
         fontSize: 15
     },
+    labelColorActive: {
+        color:Colors.orangeColor,
+        fontSize: 15
+    },
     SmalllabelColor: {
         color:Colors.DarkGray,
         fontSize: 10
     },
     imageColor: {
         color:Colors.lightDarkGray
+    },
+    imageColorActive: {
+        color:Colors.orangeColor
     },
     headerScrollArrow: {
         height:'100%',

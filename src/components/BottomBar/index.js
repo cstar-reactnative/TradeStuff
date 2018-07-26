@@ -7,6 +7,7 @@ import {
     Image,
 } from 'react-native';
 
+// import { StackActions, NavigationActions } from 'react-navigation';
 import { EventRegister } from 'react-native-event-listeners'
 
 import {Colors} from '@theme';
@@ -51,12 +52,11 @@ export default class BottomBar extends Component {
         EventRegister.removeEventListener(this.listener)
     }
 
-    navigateFunc( tabKey){
-        
+    navigateFunc(tabKey, index) {
         this.setState({active:tabKey})
         this.props.navigation.navigate(tabKey, {callback : (key)=>{
             this.setState({active:key});
-            this.navigateFunc(key)
+            // this.navigateFunc(key)
         }})
     }
 
@@ -71,7 +71,7 @@ export default class BottomBar extends Component {
                         icon={<View> 
                             <Icon name='home' color={this.state.active==="HomeTab"?'#f79a0e':'grey'} size={35}/> 
                             </View>}
-                        onPress={() => this.navigateFunc("HomeTab") }
+                        onPress={() => this.navigateFunc("HomeTab", 0) }
                         style={{ container: { minWidth: null } }}
                        
                     />
@@ -80,7 +80,7 @@ export default class BottomBar extends Component {
                         icon={<View > 
                             <Image source={this.state.active==='SentOrdersTab'?require('./sent-offers.png'):require('./sent-offers-grey.png')} style={{width: 35, height: 35}} />
                             </View>} 
-                        onPress={() => this.navigateFunc("SentOrdersTab")}
+                        onPress={() => this.navigateFunc("SentOrdersTab", 1)}
                         containerStyle={{backgroundColor: 'red'}}
                         style={{ container: { minWidth: null } }}
                     />
@@ -89,7 +89,7 @@ export default class BottomBar extends Component {
                         icon={<View > 
                         <Image source={this.state.active==='IncomingOrdersTab'?require('./received-offers.png'):require('./received-offers-grey.png')} style={{width: 35, height: 35}} />
                         </View>}
-                        onPress={() => this.navigateFunc("IncomingOrdersTab")}
+                        onPress={() => this.navigateFunc("IncomingOrdersTab", 2)}
                         style={{ container: { minWidth: null }, backgroundColor: 'red' }}
                     />
                     <BottomNavigation.Action
@@ -97,7 +97,7 @@ export default class BottomBar extends Component {
                         icon={<View > 
                             <Image source={this.state.active==='TradesTab'?require('./traded-stuff.png'):require('./traded-stuff-grey.png')} style={{width: 35, height: 35}} />
                             </View>}
-                        onPress={() => this.navigateFunc("TradesTab")}
+                        onPress={() => this.navigateFunc("TradesTab", 3)}
                         style={{ container: { minWidth: null } }}
                     />
                     <BottomNavigation.Action
@@ -105,7 +105,7 @@ export default class BottomBar extends Component {
                         icon={<View > 
                             <Image source={this.state.active==='AccountTab'?require('./user.png'):require('./user-grey.png')} style={{width: 35, height: 35}} />
                             </View>}
-                        onPress={() => this.navigateFunc("AccountTab")}
+                        onPress={() => this.navigateFunc("AccountTab", 4)}
                         style={{ container: { minWidth: null } }}
                     />
                 </BottomNavigation>

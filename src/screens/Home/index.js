@@ -5,49 +5,66 @@ import {
     Image,
     TouchableOpacity,
     StatusBar,
+    Dimensions,
     Text
 } from 'react-native';
+import FastImage from 'react-native-fast-image';
+import ScalableImage from 'react-native-scalable-image';
 
 import {TopBar,AppTheme,ScrollItem,ScrollArrow,AppContainer} from '@components';
 import Styles from './styles';
 import { Icon } from 'react-native-elements'
 import {Images} from '@theme';
 import GridList from 'react-native-grid-list';
+import Masonry from 'react-native-masonry-layout';
 
-
+const screenWidth = Dimensions.get('window').width;
 
 export default class Home extends Component {
-
     constructor(props) {
         super(props);
-        
         this.state = ({
             listItems: [
-//                { thumbnail: { uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' } },
-                { thumbnail: Images.img_1 },
-                { thumbnail: Images.img_2 },
-                { thumbnail: Images.img_3 },
-                { thumbnail: Images.img_4 },
-                { thumbnail: Images.img_5 },
-                { thumbnail: Images.img_2 },
-                { thumbnail: Images.img_1 },
-                { thumbnail: Images.img_2 },
-                { thumbnail: Images.img_3 },
-                { thumbnail: Images.img_4 },
-                { thumbnail: Images.img_5 },
-                { thumbnail: Images.img_2 },
-              ],
+                { thumbnail: Images.img_1, id: 1 },
+                { thumbnail: Images.img_2, id: 2 },
+                { thumbnail: Images.img_3, id: 3, myItem: true },
+                { thumbnail: Images.img_4, id: 4 },
+                { thumbnail: Images.img_5, id: 5 },
+                { thumbnail: Images.img_2, id: 6 },
+                { thumbnail: Images.img_1, id: 7 , myItem: true},
+                { thumbnail: Images.img_2, id: 7 },
+                { thumbnail: Images.img_3, id: 9 },
+                { thumbnail: Images.img_4, id: 10, myItem: true },
+                { thumbnail: Images.img_5, id: 11 },
+                { thumbnail: Images.img_2, id: 12, myItem: true },
+            ],
             listType:0, // 0:Available, 1:Traded
+            scrollItems: [
+                {itemImage: "computer" ,itemName:"Tech" ,index:"Tech" },
+                {itemImage: "image" ,itemName:"Clothing" ,index:"Clothing" },
+                {itemImage: "accessibility" ,itemName:"Sports" ,index:"Sports" },
+                {itemImage: "library-books" ,itemName:"Books" ,index:"Books" },
+                {itemImage: "music-video" ,itemName:"Music" ,index:"Music" },
+            ],
+            activeScroll: null,
+
           images: [
             require('../../../assets/images/icons/left-arrow.png'),
             require('../../../assets/images/icons/right-arrow.png'),
-          ]   
+          ]
         });
         this.onPressAddStuff = this.onPressAddStuff.bind(this)
     }
 
+    componentDidMount() {
+        this.masonry.addItems(this.state.listItems)
+    }
+
     onPressScrollItem(index) {
-        alert(index)
+        // alert(index)
+        if (this.state.activeScroll !== index) {
+            this.setState({activeScroll: index});
+        }
     }
 
     onPressScrollLeftArrow() {
@@ -67,10 +84,14 @@ export default class Home extends Component {
         this.props.navigation.navigate("ViewPiece",{index:index});
     }
 
-    renderItem = ({ item, index }) => (
-        <TouchableOpacity onPress={() => this.onPressPiece(index)}>
-            <View style={Styles.contentItemView} >
-                <Image style={Styles.contentItemImage} source={item.thumbnail} />
+    renderItem = (item) => (
+        <TouchableOpacity onPress={() => this.onPressPiece(item.id-1)}>
+            <View style={Styles.contentItemView}>
+                {/* <Image style={Styles.contentItemImage} source={item.thumbnail} /> */}
+                <ScalableImage
+                source={item.thumbnail}
+                width={(screenWidth/3) -16}
+                style={[Styles.contentItemImage, item.myItem ? Styles.myContentItemImage: {}]} />
             </View>
         </TouchableOpacity>
     );
@@ -98,26 +119,28 @@ export default class Home extends Component {
                             <ScrollArrow style={Styles.arrow} source={require('../../../assets/images/icons/left-arrow.png')} onTouch={this.onPressScrollLeftArrow.bind(this)}/>
                         </View>
                         <ScrollView ref="categoryScroll" style={Styles.headerScrollView} horizontal={true} showsHorizontalScrollIndicator={false}>
-                            <ScrollItem itemImage="computer" itemName="Tech" index="Tech" onTouch={this.onPressScrollItem}/>
-                            <ScrollItem itemImage="image" itemName="Clothing" index="Clothing" onTouch={this.onPressScrollItem}/>
-                            <ScrollItem itemImage="accessibility" itemName="Sports" index="Sports" onTouch={this.onPressScrollItem}/>
-                            <ScrollItem itemImage="library-books" itemName="Books" index="Books" onTouch={this.onPressScrollItem}/>
-                            <ScrollItem itemImage="music-video" itemName="Music" index="Music" onTouch={this.onPressScrollItem}/>
+                            {this.state.scrollItems.map(v => (
+                               <ScrollItem key={v.index} {...v} onTouch={() => this.onPressScrollItem(v.index)} active={this.state.activeScroll === v.index}/>
+                            ))}
                         </ScrollView>
                         <View style={Styles.scrollArrowRight}>
                             <ScrollArrow style={Styles.arrow} source={require('../../../assets/images/icons/right-arrow.png')} onTouch={this.onPressScrollRightArrow.bind(this)}/>                        
                         </View>
                     </View>
                     
-                    <View style={Styles.contentList}>
-                        <GridList
-                            showSeparator
-                            animationInitialBackgroundColor="white"
+                        <Masonry
+                            ref={node => {
+                                if (node) {
+                                    this.masonry = node;
+                                }
+                            }}
+                            keyExtractor={(i) => i.id.toString()}
+                            columns={3}
                             data={this.state.listItems}
-                            numColumns={3}
+                                //<FastImage  source={item.image} />
+                            containerStyle={Styles.contentList}
                             renderItem={this.renderItem}
                             />
-                    </View>
 
                     <View style={Styles.bottomView}>
                         <View style={Styles.addStuffBtn}>

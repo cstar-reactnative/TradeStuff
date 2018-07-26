@@ -15,32 +15,24 @@ export default {
     headerScrollView: {
         flex: 1,
         height: '100%',
-        padding: 1,
         backgroundColor:Colors.verylightGrayColor
     },
 
     contentList: {
         flex: 1, 
-        width:'100%',
-        height:'100%',
+        padding: 5,
     },
-
     contentItemView:{
-        width: '100%',
-        height: '100%',
-        justifyContent: 'center',
-        alignItems:'center',
         padding:5,
-
     },
     contentItemImage:{
-        width: '100%',
-        height: '100%',
-        borderRadius: 10,
         backgroundColor:Colors.whiteColor,
         borderColor:Colors.orangeColor,      
         borderWidth:3,
         borderRadius:5
+    },
+    myContentItemImage:{
+        borderColor:Colors.greenColor,      
     },
     bottomView: {
         position:'absolute',
@@ -76,7 +68,7 @@ export default {
         width:30,
         height:'100%',
         marginLeft: 10,
-        marginRight: 5,
+        paddingRight: 5,
     },
     arrow: {
         width: 75,

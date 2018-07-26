@@ -38,10 +38,10 @@ export class ScrollItem extends Component {
             <View style={Styles.headerScrollItem} >
                 <TouchableOpacity style={Styles.touchArea} onPress={()=>this.props.onTouch(this.props.index)}>
                     <View style={Styles.headerScrollItemIcon}>
-                        <Icon style={Styles.imageColor} name={this.props.itemImage} size={34} />
+                        <Icon style={ this.props.active ? Styles.imageColorActive : Styles.imageColor} name={this.props.itemImage} size={34} />
                     </View>
                     <View style={Styles.headerScrollItemLabel}>
-                        <Text style={Styles.labelColor} >{this.props.itemName}</Text>
+                        <Text style={this.props.active ? Styles.labelColorActive: Styles.labelColor} >{this.props.itemName}</Text>
                     </View>
                 </TouchableOpacity>
             </View>

@@ -109,7 +109,7 @@ export default class AccountDetails extends Component {
                     <View style={styles.imgsView}>
                          {this.state.toggleBtn===true?<Wants/>:<Likes/>}
                     </View>
-                    <TouchableOpacity style={styles.absoluteView} onPress={() => this.props.navigation.navigate('Account')}>
+                    <TouchableOpacity style={styles.absoluteView} onPress={() => this.props.navigation.navigate('AccountDetails')}>
                         <Icon name="edit" color={Constants.Colors.Green} size={25} />
                     </TouchableOpacity>
                     <View style={Styles.bottomView}>
