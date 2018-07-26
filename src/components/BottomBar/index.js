@@ -55,11 +55,12 @@ export default class BottomBar extends Component {
     navigateFunc(tabKey, index) {
         this.setState({active:tabKey})
 
-        const routes = this.props.navigation.state.routes[0].routes;
-        // console.log(routes);
-        // console.log(tabKey, routes.length)
-        if (tabKey === 'HomeTab' && routes.length === 3) {
-            // console.log('Check')
+        const routes = this.props.navigation.state.routes[index].routes;
+        if (routes.length > 1) {
+            this.props.navigation.dispatch(NavigationActions.navigate({
+                routeName: tabKey,
+            }));
+
             this.props.navigation.dispatch(StackActions.reset({
                 index: 0,
                 actions: [
