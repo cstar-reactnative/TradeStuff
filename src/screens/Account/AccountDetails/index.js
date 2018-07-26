@@ -71,6 +71,9 @@ export default class AccountDetails extends Component {
     );
 
     render() {
+        const params = this.props.navigation.state.params;
+        const canEdit = (!params || params && !params.noEdit);
+
         return (
             <View style={styles.container}>
                 <AppTheme >
@@ -109,9 +112,9 @@ export default class AccountDetails extends Component {
                     <View style={styles.imgsView}>
                          {this.state.toggleBtn===true?<Wants/>:<Likes/>}
                     </View>
-                    <TouchableOpacity style={styles.absoluteView} onPress={() => this.props.navigation.navigate('AccountDetails')}>
+                    {canEdit ? <TouchableOpacity style={styles.absoluteView} onPress={() => this.props.navigation.navigate('AccountDetails')}>
                         <Icon name="edit" color={Constants.Colors.Green} size={25} />
-                    </TouchableOpacity>
+                    </TouchableOpacity> : null}
                     <View style={Styles.bottomView}>
                         <View style={Styles.bottomButton}>
                             <View style={Styles.button}>

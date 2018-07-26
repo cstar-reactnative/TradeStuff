@@ -60,7 +60,7 @@ export default class ViewPiece extends Component {
     }
 
     pressUsername(){
-        this.props.navigation.navigate("AccountDetails",{index:this.state.selectedIndex})
+        this.props.navigation.navigate("AccountDetails",{index:this.state.selectedIndex, noEdit: true})
     }
 
     pressSubTitle(index){

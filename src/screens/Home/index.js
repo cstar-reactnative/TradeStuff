@@ -25,18 +25,18 @@ export default class Home extends Component {
         super(props);
         this.state = ({
             listItems: [
-                { thumbnail: Images.img_1, id: 1 },
-                { thumbnail: Images.img_2, id: 2 },
-                { thumbnail: Images.img_3, id: 3, myItem: true },
-                { thumbnail: Images.img_4, id: 4 },
-                { thumbnail: Images.img_5, id: 5 },
-                { thumbnail: Images.img_2, id: 6 },
-                { thumbnail: Images.img_1, id: 7 , myItem: true},
-                { thumbnail: Images.img_2, id: 7 },
-                { thumbnail: Images.img_3, id: 9 },
-                { thumbnail: Images.img_4, id: 10, myItem: true },
-                { thumbnail: Images.img_5, id: 11 },
-                { thumbnail: Images.img_2, id: 12, myItem: true },
+                { thumbnail: Images.img_1, cat: 'Tech', id: 1 },
+                { thumbnail: Images.img_2, cat: 'Sports', id: 2 },
+                { thumbnail: Images.img_3, cat: 'Books', id: 3, myItem: true },
+                { thumbnail: Images.img_4, cat: 'Tech', id: 4 },
+                { thumbnail: Images.img_5, cat: 'Sports', id: 5 },
+                { thumbnail: Images.img_2, cat: 'Tech', id: 6 },
+                { thumbnail: Images.img_1, cat: 'Clothing', id: 7 , myItem: true},
+                { thumbnail: Images.img_2, cat: 'Music', id: 7 },
+                { thumbnail: Images.img_3, cat: 'Books', id: 9 },
+                { thumbnail: Images.img_4, cat: 'Music', id: 10, myItem: true },
+                { thumbnail: Images.img_5, cat: 'Clothing', id: 11 },
+                { thumbnail: Images.img_2, cat: 'Sports', id: 12, myItem: true },
             ],
             listType:0, // 0:Available, 1:Traded
             scrollItems: [
@@ -61,9 +61,23 @@ export default class Home extends Component {
     }
 
     onPressScrollItem(index) {
-        // alert(index)
         if (this.state.activeScroll !== index) {
-            this.setState({activeScroll: index});
+            this.setState({activeScroll: index}, () => {
+                this.masonry.clear();
+                const fil = this.state.listItems.filter(v => v.cat === index);
+                clearTimeout(this.timeout);
+                this.timeout = setTimeout(() => {
+                    this.masonry.addItems(fil);
+                }, 200);
+
+            });
+        } else {
+            this.setState({activeScroll: null}, () => {
+                this.masonry.clear();
+                this.timeout = setTimeout(() => {
+                    this.masonry.addItems(this.state.listItems);
+                }, 200);
+            });
         }
     }
 

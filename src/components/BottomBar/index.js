@@ -7,7 +7,7 @@ import {
     Image,
 } from 'react-native';
 
-// import { StackActions, NavigationActions } from 'react-navigation';
+import { StackActions, NavigationActions } from 'react-navigation';
 import { EventRegister } from 'react-native-event-listeners'
 
 import {Colors} from '@theme';
@@ -54,10 +54,21 @@ export default class BottomBar extends Component {
 
     navigateFunc(tabKey, index) {
         this.setState({active:tabKey})
-        this.props.navigation.navigate(tabKey, {callback : (key)=>{
-            this.setState({active:key});
-            // this.navigateFunc(key)
-        }})
+
+        const routes = this.props.navigation.state.routes[0].routes;
+        // console.log(routes);
+        // console.log(tabKey, routes.length)
+        if (tabKey === 'HomeTab' && routes.length === 3) {
+            // console.log('Check')
+            this.props.navigation.dispatch(StackActions.reset({
+                index: 0,
+                actions: [
+                  NavigationActions.navigate({ routeName: routes[0].routeName }) // go to first screen of the StackNavigator
+                ]
+              }));
+        }else {
+            this.props.navigation.navigate(tabKey)
+        }
     }
 
     render() {
