@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import {
+    Text,
     View,
-    ScrollView,
-    Image,
-    TouchableOpacity,
-    StatusBar,
     Dimensions,
-    Text
+    ScrollView,
+    TouchableOpacity,
 } from 'react-native';
-import FastImage from 'react-native-fast-image';
+// import FastImage from 'react-native-fast-image';
 import ScalableImage from 'react-native-scalable-image';
-
-import {TopBar,AppTheme,ScrollItem,ScrollArrow,AppContainer} from '@components';
-import Styles from './styles';
 import { Icon } from 'react-native-elements'
-import {Images} from '@theme';
-import GridList from 'react-native-grid-list';
 import Masonry from 'react-native-masonry-layout';
+// import GridList from 'react-native-grid-list';
+
+
+import {categories, getItems} from '../../data';
+import {TopBar,AppTheme,ScrollItem,ScrollArrow,AppContainer} from '@components';
+
+import Styles from './styles';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -24,28 +24,8 @@ export default class Home extends Component {
     constructor(props) {
         super(props);
         this.state = ({
-            listItems: [
-                { thumbnail: Images.img_1, cat: 'Tech', id: 1 },
-                { thumbnail: Images.img_2, cat: 'Sports', id: 2 },
-                { thumbnail: Images.img_3, cat: 'Books', id: 3, myItem: true },
-                { thumbnail: Images.img_4, cat: 'Tech', id: 4 },
-                { thumbnail: Images.img_5, cat: 'Sports', id: 5 },
-                { thumbnail: Images.img_2, cat: 'Tech', id: 6 },
-                { thumbnail: Images.img_1, cat: 'Clothing', id: 7 , myItem: true},
-                { thumbnail: Images.img_2, cat: 'Music', id: 7 },
-                { thumbnail: Images.img_3, cat: 'Books', id: 9 },
-                { thumbnail: Images.img_4, cat: 'Music', id: 10, myItem: true },
-                { thumbnail: Images.img_5, cat: 'Clothing', id: 11 },
-                { thumbnail: Images.img_2, cat: 'Sports', id: 12, myItem: true },
-            ],
-            listType:0, // 0:Available, 1:Traded
-            scrollItems: [
-                {itemImage: "computer" ,itemName:"Tech" ,index:"Tech" },
-                {itemImage: "image" ,itemName:"Clothing" ,index:"Clothing" },
-                {itemImage: "accessibility" ,itemName:"Sports" ,index:"Sports" },
-                {itemImage: "library-books" ,itemName:"Books" ,index:"Books" },
-                {itemImage: "music-video" ,itemName:"Music" ,index:"Music" },
-            ],
+            listItems: getItems(),
+            scrollItems: categories,
             activeScroll: null,
 
           images: [
@@ -99,7 +79,7 @@ export default class Home extends Component {
     }
 
     renderItem = (item) => (
-        <TouchableOpacity onPress={() => this.onPressPiece(item.id-1)}>
+        <TouchableOpacity onPress={() => this.onPressPiece(item.id)}>
             <View style={Styles.contentItemView}>
                 {/* <Image style={Styles.contentItemImage} source={item.thumbnail} /> */}
                 <ScalableImage

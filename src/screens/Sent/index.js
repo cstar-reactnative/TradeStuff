@@ -13,26 +13,21 @@ import Styles from './styles';
 import { Button ,Icon} from 'react-native-material-ui';
 import GridList from 'react-native-grid-list';
 
+import {getSentItems} from '../../data';
+
+
 const dialogTitle = "Your offer has been withdrawn."
 export default class Sent extends Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props.navigation);
         if(this.props.navigation.state.params && this.props.navigation.state.params){
             console.log('alert')
             Alert.alert(this.props.navigation.state.params.showAlertHeader, this.props.navigation.state.params.showAlertMsg);
         }
         this.state = ({
             activeTabBar: 'navigation',
-            listItems: [
-//                { thumbnail: { uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' } },
-                { thumbnail: Images.img_1 , name: "sample 1"},
-                { thumbnail: Images.img_2 , name: "sample 2"},
-                { thumbnail: Images.img_3 , name: "sample 3"},
-                { thumbnail: Images.img_4 , name: "sample 4"},
-                { thumbnail: Images.img_5 , name: "sample 5"},
-            ],
+            listItems: getSentItems(),
             showDialog:false
         });
     }
@@ -58,13 +53,12 @@ export default class Sent extends Component {
         this.props.navigation.navigate("NotificationDialog",{title:dialogTitle});
     }
 
-    renderItem = ({ item, index }) => (
+    renderItem = ({ item }) => (
         <View style={Styles.contentItemView} >
-
-            <TouchableOpacity style={Styles.contentItemImage} onPress={()=>this.props.navigation.navigate('OfferDetails')}>
+            <TouchableOpacity style={Styles.contentItemImage} onPress={()=>this.props.navigation.navigate('OfferDetails', {trade: item})}>
                 <View style={Styles.contentItemImage}>
                     <View style={Styles.contenItemMainGreen}>
-                        <Image style={Styles.imageStyle}  source={item.thumbnail} />
+                        <Image style={Styles.imageStyle}  source={item[0].thumbnail} />
                     </View>
                 </View>
             
@@ -77,12 +71,10 @@ export default class Sent extends Component {
                 <View style={Styles.contentItemImage}>
                     
                     <View style={Styles.contenItemMainYellow}>
-                        <Image style={Styles.imageStyle}  source={item.thumbnail} />
+                        <Image style={Styles.imageStyle}  source={item[1].thumbnail} />
                     </View>
                 </View>
             </TouchableOpacity>
-
-            
         </View>
     );
 

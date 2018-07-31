@@ -135,25 +135,25 @@ export default class AddStuff extends Component {
                             
                             <Text style={Styles.detailItemlabel}>Title</Text>                                   
                             <View style={Styles.itemInput}>
-                                <TextInput ></TextInput>
+                                <TextInput />
                             </View>
 
                             <Text style={Styles.detailItemlabel}>Description</Text>                                   
                             <View style={Styles.itemInputArea}>
-                                <TextInput multiline={true} ></TextInput>
+                                <TextInput multiline={true} />
                             </View>
 
                             <View style={Styles.contain2Item}>
                                 <View style={Styles.view50Left}>
                                     <Text style={Styles.detailItemlabel}>Value</Text>                                   
                                     <View style={Styles.itemInput}>
-                                        <TextInput></TextInput>
+                                        <TextInput />
                                     </View>
                                 </View>
                                 <View style={Styles.view50Right}>
                                     <Text style={Styles.detailItemlabel}>Min Offer Value</Text>                                   
                                     <View style={Styles.itemInput}>
-                                        <TextInput  ></TextInput>
+                                        <TextInput  />
                                     </View>
                                 </View>
                             </View>

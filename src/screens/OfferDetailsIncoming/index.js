@@ -9,20 +9,23 @@ import { Button, Icon} from 'react-native-material-ui';
 import { AppTheme ,BackButton} from '@components';
 import { EventRegister } from 'react-native-event-listeners'
 import {Images,CSS} from '@theme';
+import {currentUser} from '../../data';
 
 const strOfferSent = "Your offer has been sent! \n\nThe recipient will be notified and if they accept your offer, we will let you know!"
 export default class OfferDetailsIncoming extends Component {
 
     constructor(props) {
         super(props);
-
+        const {trade} = props.navigation.state.params;
         this.state = ({
             itemOne: {
-                image:Images.img_1,
+                ...trade[0],
+                image: trade[0].thumbnail,
                 name : 'Stuff 1'
             },
             itemTwo: {
-                image:Images.img_1,
+                ...trade[1],
+                image: trade[1].thumbnail,
                 name : 'Stuff 2'
             },
         });
@@ -82,13 +85,13 @@ export default class OfferDetailsIncoming extends Component {
                 />
                     <ScrollView style={Styles.detailScroll}>
                     <View style = {Styles.diffBg}>
-                    <TouchableOpacity onPress={()=>this.props.navigation.navigate("ViewPiece", {index: 0, makeOffer: 'no'})}>
-                        <View style={Styles.oneItem}>
-                            <Image style={Styles.itemImage} source = {this.state.itemOne.image} />
+                    <TouchableOpacity onPress={()=>this.props.navigation.navigate("ViewPiece", {index: this.state.itemOne.id, makeOffer: 'no'})}>
+                        <View style={[Styles.oneItem, this.state.itemOne.userId === currentUser ? Styles.greenBorder:{}]}>
+                           <Image style={Styles.itemImage} source={this.state.itemOne.image} />
                             <View style={Styles.itemTitle}>
                                 <Text style={[CSS.font20,CSS.white]}>{this.state.itemOne.name}</Text>
                                 <View style={Styles.priceLabel}>
-                                    <Text style={[CSS.font20,CSS.backOrange,CSS.white,{padding:10}]}>$25</Text>
+                                    <Text style={[CSS.font20,CSS.backOrange,CSS.white,{padding:10}, this.state.itemOne.userId === currentUser ? Styles.greenBg:{}]}>$25</Text>
                                 </View>
                             </View>
                         </View>
@@ -96,8 +99,8 @@ export default class OfferDetailsIncoming extends Component {
                         <View style={Styles.iconView}>
                             <IconEntypo style={Styles.shareBtn} name = "arrow-bold-down" size={30}/>
                         </View>
-                        <TouchableOpacity onPress={()=>this.props.navigation.navigate("ViewPiece", {index: 0, makeOffer: 'no'})}>
-                        <View style={Styles.twoItem}>
+                        <TouchableOpacity onPress={()=>this.props.navigation.navigate("ViewPiece", {index: this.state.itemTwo.id, makeOffer: 'no'})}>
+                        <View style={[Styles.twoItem, this.state.itemTwo.userId === currentUser ? Styles.greenBorder:{}]}>
                             <View style={Styles.itemsView}>
                             <View style={Styles.mainItem}>
                                 <Image style={CSS.fullContent} source={this.state.itemTwo.image}/>
@@ -110,7 +113,7 @@ export default class OfferDetailsIncoming extends Component {
                             </View>
                             <View style={Styles.itemTitle}>                             
                                 <View style={Styles.priceLabel}>
-                                    <Text style={[CSS.font20,CSS.backGreen,CSS.white,{padding:10}]}>$37</Text>
+                                <Text style={[CSS.font20,CSS.backOrange,CSS.white,{padding:10}, this.state.itemTwo.userId === currentUser ? Styles.greenBg:{}]}>$37</Text>
                                 </View>
                             </View>
                             </View>

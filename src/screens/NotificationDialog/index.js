@@ -15,7 +15,7 @@ export default class NotificationDialog extends Component {
     constructor(props) {
         super(props);
 
-        console.log(props.navigation);
+        // console.log(props.navigation);
     }
 
     pressedContinue() {

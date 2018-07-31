@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StatusBar,
 } from 'react-native';
 import { Colors } from '@theme';
 import {
-  COLOR,
   ThemeProvider,
-  Icon,
-  Searchable,
 } from 'react-native-material-ui';
 
 const uiTheme = {
@@ -32,7 +25,10 @@ export default class AppTheme extends Component {
   render() {
     // return this.props.children;
     return (
-      <ThemeProvider uiTheme={uiTheme}>{this.props.children}</ThemeProvider>
+      <ThemeProvider uiTheme={uiTheme}>
+          {this.props.children}
+
+      </ThemeProvider>
     );
   }
 }

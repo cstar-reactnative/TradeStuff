@@ -23,7 +23,13 @@ export default {
         height:200,
         borderWidth:3,
         borderRadius:5,
-        borderColor: '#f79a0e'
+        borderColor: Colors.orangeColor,
+    },
+    greenBoder: {
+        borderColor: Colors.greenColor,
+    },
+    greenBg: {
+        backgroundColor: Colors.greenColor,
     },
     shareBtn:{
         padding:5,  

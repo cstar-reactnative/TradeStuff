@@ -17,28 +17,23 @@ import styles from './styles';
 import GridList from 'react-native-grid-list';
 import Likes from '../Likes'
 import Wants from '../Wants'
+
 export default class AccountDetails extends Component {
 
     constructor(props) {
         super(props);
-
+        const params = this.props.navigation.state.params;
+        this.params = params;
+        let user = {
+            avatar: Images.avatar,
+            name: "Alibaba",
+            city: "Washington, DC"
+        };
+        if (!!params && params.user) {
+            user = {...user, ...params.user};
+        }
         this.state = ({
-
-            userInfo: {
-                'avatar':Images.avatar,
-                'username':"Alibaba",
-
-            },
-            listItems: [
-                    // { thumbnail: { uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' } },
-                    { thumbnail: Images.img_1 },
-                    { thumbnail: Images.img_2 },
-                    { thumbnail: Images.img_3 },
-                    { thumbnail: Images.img_4 },
-                    { thumbnail: Images.img_5 },
-                    { thumbnail: Images.img_2 },
-                    ],
-            listType:0 ,
+            userInfo: user,
             toggleBtn: true
         });
     }
@@ -71,23 +66,21 @@ export default class AccountDetails extends Component {
     );
 
     render() {
-        const params = this.props.navigation.state.params;
+        const params = this.params;
         const canEdit = (!params || params && !params.noEdit);
-
         return (
             <View style={styles.container}>
                 <AppTheme >
                     <View style={styles.firstContainer}>
                         <View style={styles.imgView}>
-                            
                             <Icon style={styles.userPic} name="user" color={Constants.Colors.LightGrey} size={75} />
                             {/* <Image source={Constants.Images.user.defaultUser} style={styles.userImg}/> */}
                         </View>
                         <View style={styles.trick} />
                         <View style={styles.textSubView}>
                             <View style={styles.secondSubView}>
-                                <Text style={styles.nameText}>{"John  Doe   -"}</Text>
-                                <Text style={styles.AddressText}>{"Los Angeles, CA"}</Text>
+                                <Text style={styles.nameText}>{this.state.userInfo.name}   - </Text>
+                                <Text style={styles.AddressText}>{this.state.userInfo.city}</Text>
                             </View>
                             <Text style={{flex: 1,fontSize: 10}}>Wants</Text>
                             <View style={{width: '100%', flex: 3, position:'relative', zIndex:0 }}>
@@ -110,21 +103,22 @@ export default class AccountDetails extends Component {
                         </View>
                     </View>
                     <View style={styles.imgsView}>
-                         {this.state.toggleBtn===true?<Wants/>:<Likes/>}
+                         {this.state.toggleBtn===true?<Wants userId={this.state.userInfo.id} navigation={this.props.navigation} />:<Likes navigation={this.props.navigation}/>}
                     </View>
-                    {canEdit ? <TouchableOpacity style={styles.absoluteView} onPress={() => this.props.navigation.navigate('AccountDetails')}>
+                    {canEdit ? <React.Fragment><TouchableOpacity style={styles.absoluteView} onPress={() => this.props.navigation.navigate('AccountDetails')}>
                         <Icon name="edit" color={Constants.Colors.Green} size={25} />
-                    </TouchableOpacity> : null}
+                    </TouchableOpacity>
                     <View style={Styles.bottomView}>
                         <View style={Styles.bottomButton}>
                             <View style={Styles.button}>
                                     <Button color={Constants.Colors.Green} title="MY STUFF" onPress={() =>  this.setState({toggleBtn: true})} />
                             </View>
                             <View style={Styles.button}>
-                                    <Button color={Constants.Colors.Orange} title="MY LIKE" onPress={() =>  this.setState({toggleBtn: false})} />
+                                    <Button color={Constants.Colors.Orange} title="MY LIKES" onPress={() =>  this.setState({toggleBtn: false})} />
                             </View>
                         </View>
-                    </View>
+                    </View></React.Fragment> : null}
+
                 </AppTheme>
             </View>
         );

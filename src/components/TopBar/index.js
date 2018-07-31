@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import {
-    View,
-    Text,
-    TextInput,
     TouchableOpacity,
     Dimensions,
-    Platform,
 } from 'react-native';
 
 import { Header,SearchBar } from 'react-native-elements';

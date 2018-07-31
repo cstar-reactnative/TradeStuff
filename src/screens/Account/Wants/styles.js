@@ -41,6 +41,9 @@ export default {
         borderRadius:5,
         borderColor:Colors.greenColor
     },
+    orangeBorder: {
+        borderColor: Colors.orangeColor
+    },
 
     favoriteIcon:{
         position:'absolute',
@@ -64,6 +67,10 @@ export default {
         alignItems:'center',
         backgroundColor: Colors.greenColor
     },
+    orangeBg: {
+        backgroundColor: Colors.orangeColor
+    },
+
 
     priceText: {
         color: 'white'

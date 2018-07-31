@@ -17,20 +17,16 @@ const strOfferAccepted = "Woohoo! This trade has just been finalized!\n\nWe're l
 const strOfferDeclined = "Offer has been declined."
 const strAcceptConfirm = "Are you sure you want to accept this offer?! \n It is binding as soon as you accept!"
 const strDeclineConfirm = "Are you sure you want to decline this offer?"
+
+import {getReciveItems} from '../../data';
+
 export default class Incoming extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = ({
-
-            listItems: [
-//                { thumbnail: { uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' } },
-                { thumbnail: Images.img_1 , name: "sample 1"},
-                { thumbnail: Images.img_2 , name: "sample 2"},
-                { thumbnail: Images.img_3 , name: "sample 3"},
-
-            ]
+            listItems: getReciveItems(),
         });
     }
 
@@ -73,13 +69,13 @@ export default class Incoming extends Component {
     
         this.props.navigation.navigate("NotificationDialog",{title:strOfferDeclined});
     }
-    renderItem = ({ item, index }) => (
+    renderItem = ({ item  }) => (
         <View style={Styles.contentItemView} >
 
-            <TouchableOpacity style={Styles.contentItemImage} onPress={()=>this.props.navigation.navigate('OfferDetailsIncoming')}>
+            <TouchableOpacity style={Styles.contentItemImage} onPress={()=>this.props.navigation.navigate('OfferDetailsIncoming', {trade: item})}>
                 <View style={Styles.contentItemImage}>
                     <View style={Styles.contenItemMainGreen}>
-                        <Image style={Styles.imageStyle}  source={item.thumbnail} />
+                        <Image style={Styles.imageStyle}  source={item[0].thumbnail} />
                     </View>
                     
                 </View>            
@@ -91,7 +87,7 @@ export default class Incoming extends Component {
             
                 <View style={Styles.contentItemImage}>
                     <View style={Styles.contenItemMainYellow}>
-                        <Image style={Styles.imageStyle}  source={item.thumbnail} />
+                        <Image style={Styles.imageStyle}  source={item[1].thumbnail} />
                     </View>
                 </View>
             </TouchableOpacity>

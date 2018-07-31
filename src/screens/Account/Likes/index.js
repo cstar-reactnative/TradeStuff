@@ -13,6 +13,8 @@ import Styles from './styles';
 import { Button ,Icon} from 'react-native-material-ui';
 import GridList from 'react-native-grid-list';
 import { copy } from '@utils';
+import {getLikedByMe} from '../../../data';
+
 
 export default class Likes extends Component {
 
@@ -20,14 +22,7 @@ export default class Likes extends Component {
         super(props);
 
         this.state = ({
-            likesItems: [
-                { thumbnail: Images.img_1 },
-                { thumbnail: Images.img_2 },
-                { thumbnail: Images.img_3 },
-                { thumbnail: Images.img_4 },
-                { thumbnail: Images.img_5 },
-                { thumbnail: Images.img_2 },
-            ],
+            likesItems: getLikedByMe()
         });
     }
 

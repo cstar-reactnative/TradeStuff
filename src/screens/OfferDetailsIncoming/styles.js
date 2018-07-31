@@ -50,6 +50,12 @@ export default {
     diffBg:{
         backgroundColor: Colors.whiteColor
     },
+    greenBorder: {
+        borderColor:Colors.greenColor,
+    },
+    greenBg: {
+        backgroundColor:Colors.greenColor,
+    },
     bottomView: {
         position:'absolute',
         width:'100%',

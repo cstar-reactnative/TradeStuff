@@ -91,7 +91,13 @@ export default {
         padding:0,
         marginRight:10,
         borderWidth:6,
+        borderColor:Colors.orangeColor,
+    },
+    greenBorder: {
         borderColor:Colors.greenColor,
+    },
+    greenBg: {
+        backgroundColor:Colors.greenColor,
     },
     itemImage: {
         width:'100%',
